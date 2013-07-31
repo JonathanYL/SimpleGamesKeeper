@@ -15,12 +15,17 @@
 @implementation SGKListViewController
 
 @synthesize navBar = _navBar;
+@synthesize _gamesTableView;
 
 - (id)initWithIndex:(int)carouselIndex {
     self = [super init];
     if (self) {
         self.view.backgroundColor = [UIColor whiteColor];
         [self initNavBar:carouselIndex];
+        self._gamesList = [NSArray arrayWithObjects:@"Brave new world",@"Call of the Wild",@"Catch-22",@"Atlas Shrugged",@"The Great Gatsby",@"The Art of War",@"The Catcher in the Rye",@"The Picture of Dorian Gray",@"The Grapes of Wrath", @"The Metamorphosis",nil];
+        [self initGamesTableView];
+        
+        // Needs to be changed to delegate function
         [_navBar._backButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
 
     }
@@ -71,9 +76,41 @@
     [self.view addSubview:_navBar];
 }
 
+- (void)initGamesTableView {
+    _gamesTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navBar.frame), self.view.frame.size.width, self.view.frame.size.height - _navBar.frame.size.height)];
+    _gamesTableView.delegate = self;
+    _gamesTableView.dataSource = self;
+    [self.view addSubview:_gamesTableView];
+}
+
 #pragma mark - other
 - (void)didPressButton:(UIButton *)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - UITable Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 0;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [self._gamesList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    cell.textLabel.text = [self._gamesList objectAtIndex:indexPath.row];
+    return cell;
 }
 @end

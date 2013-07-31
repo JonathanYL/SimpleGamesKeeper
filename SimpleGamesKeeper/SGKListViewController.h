@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SGKNavView.h"
 
-@interface SGKListViewController : UIViewController
+@interface SGKListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) SGKNavView *navBar;
+@property (nonatomic, strong) UITableView *_gamesTableView;
+@property (nonatomic, strong) NSMutableArray *_gamesList;
 
 - (id)initWithIndex:(int)carouselIndex;
 @end

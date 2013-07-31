@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABE0C73D17A74E3100666F18 /* GamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE0C73C17A74E3100666F18 /* GamesTableViewController.m */; };
 		ABECC41917A4C0F40089EED6 /* SGKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABECC41817A4C0F40089EED6 /* SGKListViewController.m */; };
 		ABECC41D17A4C1520089EED6 /* SGKNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABECC41C17A4C1520089EED6 /* SGKNavView.m */; };
 		ABF0C32817A444F00042E9A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF0C32717A444F00042E9A2 /* UIKit.framework */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ABE0C73B17A74E3100666F18 /* GamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamesTableViewController.h; sourceTree = "<group>"; };
+		ABE0C73C17A74E3100666F18 /* GamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamesTableViewController.m; sourceTree = "<group>"; };
 		ABECC41717A4C0F40089EED6 /* SGKListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKListViewController.h; sourceTree = "<group>"; };
 		ABECC41817A4C0F40089EED6 /* SGKListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKListViewController.m; sourceTree = "<group>"; };
 		ABECC41B17A4C1520089EED6 /* SGKNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKNavView.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				ABF0C34017A444F00042E9A2 /* SGKViewControllerViewController.m */,
 				ABECC41717A4C0F40089EED6 /* SGKListViewController.h */,
 				ABECC41817A4C0F40089EED6 /* SGKListViewController.m */,
+				ABE0C73B17A74E3100666F18 /* GamesTableViewController.h */,
+				ABE0C73C17A74E3100666F18 /* GamesTableViewController.m */,
 				ABF0C35117A448210042E9A2 /* iCarousel */,
 				ABF0C32E17A444F00042E9A2 /* Supporting Files */,
 			);
@@ -251,6 +256,7 @@
 				ABF0C35017A4481B0042E9A2 /* iCarousel.m in Sources */,
 				ABECC41917A4C0F40089EED6 /* SGKListViewController.m in Sources */,
 				ABECC41D17A4C1520089EED6 /* SGKNavView.m in Sources */,
+				ABE0C73D17A74E3100666F18 /* GamesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
