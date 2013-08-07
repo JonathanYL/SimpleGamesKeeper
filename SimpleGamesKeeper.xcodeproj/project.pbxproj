@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0E661C17AB4BF50059BD9F /* GiantBombAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */; };
+		AB4AF7EC17B0565B0067A390 /* SGKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */; };
 		ABE0C73D17A74E3100666F18 /* GamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE0C73C17A74E3100666F18 /* GamesTableViewController.m */; };
 		ABECC41917A4C0F40089EED6 /* SGKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABECC41817A4C0F40089EED6 /* SGKListViewController.m */; };
 		ABECC41D17A4C1520089EED6 /* SGKNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABECC41C17A4C1520089EED6 /* SGKNavView.m */; };
@@ -33,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0E661A17AB4BF50059BD9F /* GiantBombAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GiantBombAPI.h; path = ../GiantBombAPI.h; sourceTree = "<group>"; };
+		AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GiantBombAPI.m; path = ../GiantBombAPI.m; sourceTree = "<group>"; };
+		AB4AF7EA17B0565B0067A390 /* SGKTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTableViewCell.h; sourceTree = "<group>"; };
+		AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTableViewCell.m; sourceTree = "<group>"; };
 		ABE0C73B17A74E3100666F18 /* GamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamesTableViewController.h; sourceTree = "<group>"; };
 		ABE0C73C17A74E3100666F18 /* GamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamesTableViewController.m; sourceTree = "<group>"; };
 		ABECC41717A4C0F40089EED6 /* SGKListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKListViewController.h; sourceTree = "<group>"; };
@@ -82,9 +88,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB0E661D17AB4BFE0059BD9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB0E661A17AB4BF50059BD9F /* GiantBombAPI.h */,
+				AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		ABECC41A17A4C1310089EED6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB4AF7EA17B0565B0067A390 /* SGKTableViewCell.h */,
+				AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */,
 				ABECC41B17A4C1520089EED6 /* SGKNavView.h */,
 				ABECC41C17A4C1520089EED6 /* SGKNavView.m */,
 			);
@@ -122,6 +139,7 @@
 		ABF0C32D17A444F00042E9A2 /* SimpleGamesKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				AB0E661D17AB4BFE0059BD9F /* Models */,
 				ABECC41A17A4C1310089EED6 /* Views */,
 				ABF0C33F17A444F00042E9A2 /* SGKViewControllerViewController.h */,
 				ABF0C34017A444F00042E9A2 /* SGKViewControllerViewController.m */,
@@ -257,6 +275,8 @@
 				ABECC41917A4C0F40089EED6 /* SGKListViewController.m in Sources */,
 				ABECC41D17A4C1520089EED6 /* SGKNavView.m in Sources */,
 				ABE0C73D17A74E3100666F18 /* GamesTableViewController.m in Sources */,
+				AB0E661C17AB4BF50059BD9F /* GiantBombAPI.m in Sources */,
+				AB4AF7EC17B0565B0067A390 /* SGKTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

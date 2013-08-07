@@ -13,7 +13,8 @@
 
 @property (nonatomic, strong) SGKNavView *navBar;
 @property (nonatomic, strong) UITableView *_gamesTableView;
-@property (nonatomic, strong) NSMutableArray *_gamesList;
+@property (nonatomic, strong) NSDictionary *_gamesList;
 
 - (id)initWithIndex:(int)carouselIndex;
+- (void)fetchGamesList;
 @end

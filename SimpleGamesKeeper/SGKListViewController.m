@@ -8,26 +8,22 @@
 
 #import "SGKListViewController.h"
 
-@interface SGKListViewController ()
-
+@interface SGKListViewController () {
+    int index;
+}
 @end
 
 @implementation SGKListViewController
 
 @synthesize navBar = _navBar;
 @synthesize _gamesTableView;
+@synthesize _gamesList;
 
 - (id)initWithIndex:(int)carouselIndex {
     self = [super init];
     if (self) {
+        index = carouselIndex;
         self.view.backgroundColor = [UIColor whiteColor];
-        [self initNavBar:carouselIndex];
-        self._gamesList = [NSArray arrayWithObjects:@"Brave new world",@"Call of the Wild",@"Catch-22",@"Atlas Shrugged",@"The Great Gatsby",@"The Art of War",@"The Catcher in the Rye",@"The Picture of Dorian Gray",@"The Grapes of Wrath", @"The Metamorphosis",nil];
-        [self initGamesTableView];
-        
-        // Needs to be changed to delegate function
-        [_navBar._backButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
-
     }
     return self;
 }
@@ -36,6 +32,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self fetchGamesList];
+    [self initNavBar:index];
+    [self initGamesTableView];
+    
+    // Needs to be changed to delegate function
+    [_navBar._backButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -89,28 +91,47 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)fetchGamesList {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.giantbomb.com/api/games/3045-35/?api_key=509b211e07931409e7dc0a4297f1aa4b82c34802&format=json&field_list=name"]];
+        NSError *error;
+        _gamesList = [NSJSONSerialization JSONObjectWithData:data
+                                                     options:kNilOptions
+                                                       error:&error];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self._gamesTableView reloadData];
+        });
+        
+    });
+}
+
 #pragma mark - UITable Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self._gamesList count];
+    return [[self._gamesList objectForKey:@"results"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = [self._gamesList objectAtIndex:indexPath.row];
+    
+    NSDictionary *games = [[_gamesList objectForKey:@"results"] objectAtIndex:indexPath.row];
+    UIFont *sampleFont = [UIFont fontWithName:@"Helvetica" size:14.0];
+    NSString *text = [games objectForKey:@"name"];
+    [cell.textLabel setFont:sampleFont];
+    cell.textLabel.text = text;
     return cell;
 }
 @end
