@@ -18,6 +18,7 @@
 @synthesize navBar = _navBar;
 @synthesize _gamesTableView;
 @synthesize _gamesList;
+@synthesize _searchBar;
 
 - (id)initWithIndex:(int)carouselIndex {
     self = [super init];
@@ -32,8 +33,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self fetchGamesList];
+    //[self fetchGamesList];
     [self initNavBar:index];
+    [self initSearchBar];
     [self initGamesTableView];
     
     // Needs to be changed to delegate function
@@ -78,8 +80,16 @@
     [self.view addSubview:_navBar];
 }
 
+- (void)initSearchBar {
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navBar.frame), self.view.frame.size.width, 44)];
+    _searchBar.tintColor = [UIColor darkGrayColor];
+    _searchBar.delegate = self;
+    [self.view addSubview:_searchBar];
+    
+}
+
 - (void)initGamesTableView {
-    _gamesTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navBar.frame), self.view.frame.size.width, self.view.frame.size.height - _navBar.frame.size.height)];
+    _gamesTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_searchBar.frame), self.view.frame.size.width, self.view.frame.size.height - _navBar.frame.size.height - _searchBar.frame.size.height)];
     _gamesTableView.delegate = self;
     _gamesTableView.dataSource = self;
     [self.view addSubview:_gamesTableView];
@@ -133,5 +143,25 @@
     [cell.textLabel setFont:sampleFont];
     cell.textLabel.text = text;
     return cell;
+}
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSString *query = [searchBar.text stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSString *firstPart = @"http://www.giantbomb.com/api/search/?api_key=509b211e07931409e7dc0a4297f1aa4b82c34802&format=json&query=";
+    NSString *secondPart = @"&resources=game&limit=25&field_list=name,api_detail_url,platforms,id,image";
+    NSString *completeString = [NSString stringWithFormat:@"%@%@%@", firstPart, query, secondPart];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:completeString]];
+        NSError *error;
+        _gamesList = [NSJSONSerialization JSONObjectWithData:data
+                                                     options:kNilOptions
+                                                       error:&error];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self._gamesTableView reloadData];
+        });
+        
+    });
+    [_searchBar resignFirstResponder];
 }
 @end

@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SGKNavView.h"
 
-@interface SGKListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SGKListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) SGKNavView *navBar;
 @property (nonatomic, strong) UITableView *_gamesTableView;
 @property (nonatomic, strong) NSDictionary *_gamesList;
+@property (nonatomic, strong) UISearchBar *_searchBar;
 
 - (id)initWithIndex:(int)carouselIndex;
 - (void)fetchGamesList;
