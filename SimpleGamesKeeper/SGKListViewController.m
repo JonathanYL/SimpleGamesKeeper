@@ -7,6 +7,8 @@
 //
 
 #import "SGKListViewController.h"
+#import "DataLoader.h"
+#import "SGKGameViewController.h"
 
 @interface SGKListViewController () {
     int index;
@@ -17,8 +19,14 @@
 
 @synthesize navBar = _navBar;
 @synthesize _gamesTableView;
-@synthesize _gamesList;
+@synthesize _gamesDictionary;
+@synthesize _gamesArray;
 @synthesize _searchBar;
+
+@synthesize fetchBatch;
+@synthesize loading;
+@synthesize noMoreResultsAvail;
+@synthesize pageNum;
 
 - (id)initWithIndex:(int)carouselIndex {
     self = [super init];
@@ -33,7 +41,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //[self fetchGamesList];
     [self initNavBar:index];
     [self initSearchBar];
     [self initGamesTableView];
@@ -41,12 +48,25 @@
     // Needs to be changed to delegate function
     [_navBar._backButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
     
+    pageNum = 1;
+    fetchBatch = 0;
+    loading = NO;
+    noMoreResultsAvail = NO;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - load request from DataLoader
+- (void)loadRequest:(NSString *)query
+{
+    DataLoader *loader = [[DataLoader alloc] init];
+    loader.delegate = self;
+    [loader loadData:query and:pageNum];
+    pageNum++;
 }
 
 #pragma mark - custom init
@@ -101,20 +121,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)fetchGamesList {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.giantbomb.com/api/games/3045-35/?api_key=509b211e07931409e7dc0a4297f1aa4b82c34802&format=json&field_list=name"]];
-        NSError *error;
-        _gamesList = [NSJSONSerialization JSONObjectWithData:data
-                                                     options:kNilOptions
-                                                       error:&error];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self._gamesTableView reloadData];
-        });
-        
-    });
-}
-
 #pragma mark - UITable Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -124,7 +130,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[self._gamesList objectForKey:@"results"] count];
+    if (!_gamesArray) {
+        return 0;
+    }
+    // extra cell is the loading cell
+    return [self._gamesArray count]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -137,31 +147,62 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    NSDictionary *games = [[_gamesList objectForKey:@"results"] objectAtIndex:indexPath.row];
-    UIFont *sampleFont = [UIFont fontWithName:@"Helvetica" size:14.0];
-    NSString *text = [games objectForKey:@"name"];
-    [cell.textLabel setFont:sampleFont];
-    cell.textLabel.text = text;
-    return cell;
+    // Check if we need to load more data
+    if ((indexPath.row >= ([self._gamesArray count] /3 *2)) && !noMoreResultsAvail) {
+        if (!loading) {
+            loading = YES;
+            // loadRequest is the method that loads the next batch of data.
+            [self loadRequest:self._searchBar.text];
+        }
+    }
+
+    if ([self._gamesArray count] != 0) {
+        if (indexPath.row < [self._gamesArray count]) {
+            NSDictionary *game = [_gamesArray objectAtIndex:indexPath.row];
+            UIFont *sampleFont = [UIFont fontWithName:@"Helvetica" size:14.0];
+            NSString *text = [game objectForKey:@"name"];
+            [cell.textLabel setFont:sampleFont];
+            cell.textLabel.text = text;
+            return cell;
+        } else {
+            if (!noMoreResultsAvail) {
+                // If there are results available, display @"Loading More..." in the last cell
+                UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                               reuseIdentifier:CellIdentifier];
+                cell.textLabel.text = @"Loading More...";
+                cell.textLabel.font = [UIFont systemFontOfSize:18];
+                return cell;
+            } else {
+                // If there are no results available, display @"Loading More..." in the last cell
+                UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                               reuseIdentifier:CellIdentifier];
+                cell.textLabel.font = [UIFont systemFontOfSize:16];
+                cell.textLabel.text = @"(No More Results Available)";
+                return cell;
+            }
+        }
+    } else {
+        [self._gamesTableView reloadData];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *game = [_gamesArray objectAtIndex:indexPath.row];
+    NSString *apiDetailURL = [game objectForKey:@"api_detail_url"];
+    NSLog(@"%@", apiDetailURL);
+    SGKGameViewController *viewController = [[SGKGameViewController alloc] initWithURLDetail:apiDetailURL];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark - UISearchBarDelegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSString *query = [searchBar.text stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-    NSString *firstPart = @"http://www.giantbomb.com/api/search/?api_key=509b211e07931409e7dc0a4297f1aa4b82c34802&format=json&query=";
-    NSString *secondPart = @"&resources=game&limit=25&field_list=name,api_detail_url,platforms,id,image";
-    NSString *completeString = [NSString stringWithFormat:@"%@%@%@", firstPart, query, secondPart];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:completeString]];
-        NSError *error;
-        _gamesList = [NSJSONSerialization JSONObjectWithData:data
-                                                     options:kNilOptions
-                                                       error:&error];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self._gamesTableView reloadData];
-        });
-        
-    });
+    pageNum = 1;
+    noMoreResultsAvail = NO;
+    _gamesDictionary = nil;
+    _gamesArray = nil;
+    _gamesDictionary = [NSMutableDictionary dictionary];
+    _gamesArray = [NSMutableArray array];
+    [self loadRequest:searchBar.text];
     [_searchBar resignFirstResponder];
 }
 @end

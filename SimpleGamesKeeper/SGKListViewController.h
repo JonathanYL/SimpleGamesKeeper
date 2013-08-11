@@ -13,9 +13,15 @@
 
 @property (nonatomic, strong) SGKNavView *navBar;
 @property (nonatomic, strong) UITableView *_gamesTableView;
-@property (nonatomic, strong) NSDictionary *_gamesList;
 @property (nonatomic, strong) UISearchBar *_searchBar;
 
+@property (nonatomic, strong) NSMutableDictionary *_gamesDictionary;
+@property (nonatomic, strong) NSMutableArray *_gamesArray;
+@property (nonatomic) int pageNum;
+@property (nonatomic) int fetchBatch;
+@property (nonatomic) BOOL loading;
+@property (nonatomic) BOOL noMoreResultsAvail;
+
+
 - (id)initWithIndex:(int)carouselIndex;
-- (void)fetchGamesList;
 @end
