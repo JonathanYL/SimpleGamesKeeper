@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "SGKListViewController.h"
+#import "SGKGameViewController.h"
 
 @interface DataLoader : NSObject
 
 @property (strong, nonatomic) SGKListViewController *delegate;
+@property (strong, nonatomic) SGKGameViewController *gameDelegate;
+
 - (void)loadData:(NSString*)queryString and:(int)pageNum;
+- (void)loadGameData:(NSString *)queryString;
 
 @end

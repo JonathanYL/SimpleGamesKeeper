@@ -12,5 +12,8 @@
 
 @property (nonatomic, strong) UIButton *_backButton;
 @property (nonatomic, strong) UILabel *_systemName;
+
+- (id)initWithFrame:(CGRect)frame andIndex:(int)index;
+
 @end
 

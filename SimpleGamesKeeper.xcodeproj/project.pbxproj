@@ -11,6 +11,8 @@
 		AB0E661C17AB4BF50059BD9F /* GiantBombAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */; };
 		AB4AF7EC17B0565B0067A390 /* SGKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */; };
 		ABE258CA17B824C800A184B2 /* SGKGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258C917B824C800A184B2 /* SGKGameViewController.m */; };
+		ABE258CD17B8648C00A184B2 /* SGKGameScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258CC17B8648C00A184B2 /* SGKGameScrollView.m */; };
+		ABE258D017B864ED00A184B2 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258CF17B864ED00A184B2 /* GameModel.m */; };
 		ABECC41917A4C0F40089EED6 /* SGKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABECC41817A4C0F40089EED6 /* SGKListViewController.m */; };
 		ABECC41D17A4C1520089EED6 /* SGKNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABECC41C17A4C1520089EED6 /* SGKNavView.m */; };
 		ABF0C32817A444F00042E9A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF0C32717A444F00042E9A2 /* UIKit.framework */; };
@@ -44,6 +46,10 @@
 		AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTableViewCell.m; sourceTree = "<group>"; };
 		ABE258C817B824C800A184B2 /* SGKGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKGameViewController.h; sourceTree = "<group>"; };
 		ABE258C917B824C800A184B2 /* SGKGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKGameViewController.m; sourceTree = "<group>"; };
+		ABE258CB17B8648C00A184B2 /* SGKGameScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKGameScrollView.h; sourceTree = "<group>"; };
+		ABE258CC17B8648C00A184B2 /* SGKGameScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKGameScrollView.m; sourceTree = "<group>"; };
+		ABE258CE17B864ED00A184B2 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameModel.h; path = ../GameModel.h; sourceTree = "<group>"; };
+		ABE258CF17B864ED00A184B2 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameModel.m; path = ../GameModel.m; sourceTree = "<group>"; };
 		ABECC41717A4C0F40089EED6 /* SGKListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKListViewController.h; sourceTree = "<group>"; };
 		ABECC41817A4C0F40089EED6 /* SGKListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKListViewController.m; sourceTree = "<group>"; };
 		ABECC41B17A4C1520089EED6 /* SGKNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKNavView.h; sourceTree = "<group>"; };
@@ -94,6 +100,8 @@
 		AB0E661D17AB4BFE0059BD9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ABE258CE17B864ED00A184B2 /* GameModel.h */,
+				ABE258CF17B864ED00A184B2 /* GameModel.m */,
 				AB0E661A17AB4BF50059BD9F /* GiantBombAPI.h */,
 				AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */,
 				AB03919817B334BA003708A3 /* DataLoader.h */,
@@ -105,6 +113,8 @@
 		ABECC41A17A4C1310089EED6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ABE258CB17B8648C00A184B2 /* SGKGameScrollView.h */,
+				ABE258CC17B8648C00A184B2 /* SGKGameScrollView.m */,
 				AB4AF7EA17B0565B0067A390 /* SGKTableViewCell.h */,
 				AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */,
 				ABECC41B17A4C1520089EED6 /* SGKNavView.h */,
@@ -283,6 +293,8 @@
 				AB4AF7EC17B0565B0067A390 /* SGKTableViewCell.m in Sources */,
 				AB03919A17B334BA003708A3 /* DataLoader.m in Sources */,
 				ABE258CA17B824C800A184B2 /* SGKGameViewController.m in Sources */,
+				ABE258CD17B8648C00A184B2 /* SGKGameScrollView.m in Sources */,
+				ABE258D017B864ED00A184B2 /* GameModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
