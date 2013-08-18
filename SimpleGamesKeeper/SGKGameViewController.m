@@ -20,6 +20,7 @@
     UILabel *releaseDateLabel;
     UILabel *descriptionHeader;
     UILabel *descriptionLabel;
+    UILabel *gameDetailHeader;
 }
 @end
 
@@ -86,6 +87,7 @@
 #pragma mark - custom init
 
 - (void)initMainView {
+    
     [self initPicture :^{
         [self initName];
         [self initDeveloper];
@@ -93,7 +95,12 @@
         [self initDescriptionHeader];
         [self initDescriptionLabel];
     }];
+}
 
+- (void)initScrollView {
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navBar.frame), self.view.frame.size.width, 0)];
+    [_scrollView setScrollEnabled:YES];
+    [self.view addSubview:_scrollView];
 }
 
 - (void)initPicture:(void(^)(void))callback {
@@ -166,6 +173,10 @@
     descriptionLabel.text = _game.deck;
     descriptionLabel.font = [UIFont systemFontOfSize:14.0f];
     [self customizeLabel:descriptionLabel];
+}
+
+- (void)initGameDetailsHeader {
+    
 }
 
 #pragma mark - customization
