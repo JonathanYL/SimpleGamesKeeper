@@ -71,7 +71,7 @@
 
 #pragma mark - custom init
 - (void)initNavBar:(int)carouselIndex{
-    _navBar = [[SGKNavView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100) andIndex:carouselIndex];
+    _navBar = [[SGKNavView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40) andIndex:carouselIndex];
     [self.view addSubview:_navBar];
 }
 

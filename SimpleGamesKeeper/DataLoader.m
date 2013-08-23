@@ -69,7 +69,6 @@
 //            NSLog(@"%@", blah);
             [gameDelegate initGameModelClassAndPushNavigationController];
             [gameDelegate initMainView];
-            NSLog(@"blahhh");
         });
     });
 }

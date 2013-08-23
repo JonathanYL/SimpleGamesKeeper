@@ -18,6 +18,7 @@
         // Initialization code
         [self initSystemLabel:index];
         [self initBackButton];
+        [self initBorderLine];
     }
     return self;
 }
@@ -33,18 +34,23 @@
 
 // Instantiation
 -(void)initBackButton {
-    self._backButton = [[UIButton alloc] initWithFrame:CGRectMake(5,5,30,40)];
-    self._backButton.backgroundColor = [UIColor blackColor];
+    self._backButton = [[UIButton alloc] initWithFrame:CGRectMake(0,0,26,self.frame.size.height)];
+    [self._backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    UIFont *customFont = [UIFont fontWithName:@"Marker Felt" size:26.0f];
+    [self._backButton.titleLabel setFont:customFont];
+    [self._backButton setTitle:@"<" forState:UIControlStateNormal];
+    self._backButton.backgroundColor = [UIColor clearColor];
     [self addSubview:self._backButton];
 }
 
 - (void)initSystemLabel:(int)carouselIndex {
     // Generic Customization
-    self._systemName = [[UILabel alloc] initWithFrame:CGRectMake(50,5,200,40)];
+    self._systemName = [[UILabel alloc] initWithFrame:CGRectMake(0,0,self.frame.size.width,self.frame.size.height)];
     self._systemName.textColor = [UIColor whiteColor];
     self._systemName.textAlignment = NSTextAlignmentCenter;
-    self._systemName.font = [UIFont systemFontOfSize:14];
-    self._systemName.backgroundColor = [UIColor blackColor];
+    UIFont *customFont = [UIFont fontWithName:@"Marker Felt" size:23.0f];
+    [self._systemName setFont:customFont];
+    self._systemName.backgroundColor = [UIColor clearColor];
     // Get's a little different here.
     switch (carouselIndex) {
         case 0:
@@ -61,7 +67,7 @@
             break;
         case 3:
             self.backgroundColor = [UIColor redColor];
-            self._systemName.text = @"Sony Games List";
+            self._systemName.text = @"Nintendo Games List";
             break;
         case 4:
             self.backgroundColor = [UIColor orangeColor];
@@ -72,5 +78,11 @@
             break;
     }
     [self addSubview:self._systemName];
+}
+
+- (void)initBorderLine {
+    UIView *border = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.frame), CGRectGetWidth(self.frame), 1)];
+    border.backgroundColor = [UIColor darkGrayColor];
+    [self addSubview:border];
 }
 @end

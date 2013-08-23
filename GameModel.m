@@ -15,7 +15,12 @@
     if (self) {
         self.id = [[results objectForKey:@"id"] intValue];
         self.name = [results objectForKey:@"name"];
-        self.deck = [results objectForKey:@"deck"];
+        
+        self.deck = @"";
+        if ([results objectForKey:@"deck"] != [NSNull null]) {
+            self.deck = [results objectForKey:@"deck"];
+        }
+        
         // Will probably have to be in its own methods
         self.imageURL = [NSURL URLWithString:[[results objectForKey:@"image"] objectForKey:@"thumb_url"]];
         
@@ -46,19 +51,26 @@
             }
         }
         
-        self.ageRating = [[[results objectForKey:@"original_game_rating"] objectAtIndex:0] objectForKey:@"name"];
+        self.ageRating = @"";
+        if ([[results objectForKey:@"original_game_rating"] count] > 0) {
+            self.ageRating = [[[results objectForKey:@"original_game_rating"] objectAtIndex:0] objectForKey:@"name"];
+        }
         
         // need to check if doesn't exist.
-        NSString *dateString = [results objectForKey:@"original_release_date"];
-        if (dateString) {
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            
-            [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-            
-            NSDate *date = [dateFormatter dateFromString:dateString];
-            [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-            [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-            self.releaseDate = [dateFormatter stringFromDate:date];
+        self.releaseDate = @"";
+        
+        if ([results objectForKey:@"original_release_date"] != [NSNull null]) {
+            NSString *dateString = [results objectForKey:@"original_release_date"];
+            if (dateString) {
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                
+                [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+                
+                NSDate *date = [dateFormatter dateFromString:dateString];
+                [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+                [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+                self.releaseDate = [dateFormatter stringFromDate:date];
+            }
         }
         
         self.platforms = @"";
@@ -66,7 +78,7 @@
             if (i == 0) {
                 self.platforms = [[[results objectForKey:@"platforms"] objectAtIndex:i] objectForKey:@"name"];
             } else {
-                self.publishers = [NSString stringWithFormat:@"%@, %@", self.platforms, [[[results objectForKey:@"platforms"] objectAtIndex:i] objectForKey:@"name"]];
+                self.platforms = [NSString stringWithFormat:@"%@, %@", self.platforms, [[[results objectForKey:@"platforms"] objectAtIndex:i] objectForKey:@"name"]];
             }
         }
         

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSDictionary *_gameResult;
 @property (nonatomic, strong) UIScrollView *_scrollView;
 @property (nonatomic, strong) GameModel *_game;
+@property (nonatomic, strong) UIButton *_addGameButton;
 
 - (id)initWithURLDetail:(NSString *)urlString andIndex:(int)carouselIndex;
 - (void)initGameModelClassAndPushNavigationController;
