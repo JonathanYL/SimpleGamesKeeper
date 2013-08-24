@@ -47,11 +47,11 @@
     self.items = [NSMutableArray array];
     
     // Add the titles. Will change to pictures.
-    UIImage *pcImage = [UIImage imageNamed:@"PC.png"];
-    UIImage *playstationImage = [UIImage imageNamed:@"playstation.png"];
-    UIImage *xboxImage = [UIImage imageNamed:@"xbox.png"];
-    UIImage *nintendoImage = [UIImage imageNamed:@"nintendo.png"];
-    UIImage *miscImage = [UIImage imageNamed:@"misc.png"];
+    UIImage *pcImage = [UIImage imageNamed:@"logoPC.png"];
+    UIImage *playstationImage = [UIImage imageNamed:@"logoPS.png"];
+    UIImage *xboxImage = [UIImage imageNamed:@"logoXBOX.png"];
+    UIImage *nintendoImage = [UIImage imageNamed:@"logoNintendo.png"];
+    UIImage *miscImage = [UIImage imageNamed:@"logoEvery.png"];
     
     [items addObject:pcImage];
     [items addObject:playstationImage];
@@ -78,7 +78,7 @@
     // add background
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    backgroundView.image = [UIImage imageNamed:@"background.png"];
+    backgroundView.image = [UIImage imageNamed:@"newBackground.png"];
     [self.view addSubview:backgroundView];
     
     //create carousel
@@ -127,7 +127,7 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150.0f, 150.0f)];
         ((UIImageView *)view).image = [UIImage imageNamed:@"page.png"];
         view.contentMode = UIViewContentModeCenter;
         label.tag = 1;

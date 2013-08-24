@@ -8,6 +8,12 @@
 
 #import "SGKNavView.h"
 
+#define PlayStationColor [UIColor colorWithRed:17.0f/255.0f green:98.0f/255.0f blue:175.0f/255.0f alpha:1.0f]
+#define XboxColor [UIColor colorWithRed:119.0f/255.0f green:177.0f/255.0f blue:54.0f/255.0f alpha:1.0f]
+#define NintendoColor [UIColor colorWithRed:236.0f/255.0f green:79.0f/255.0f blue:76.0f/255.0f alpha:1.0f]
+#define EverythingColor [UIColor colorWithRed:255.0f/255.0f green:167.0f/255.0f blue:77.0f/255.0f alpha:1.0f]
+#define PCColor [UIColor colorWithRed:213.0f/255.0f green:134.0f/255.0f blue:221.0f/255.0f alpha:1.0f]
+
 @implementation SGKNavView
 @synthesize _systemName;
 
@@ -54,24 +60,24 @@
     // Get's a little different here.
     switch (carouselIndex) {
         case 0:
-            self.backgroundColor = [UIColor purpleColor];
-            self._systemName.text = @"PC Games List";
+            self.backgroundColor = PCColor;
+            self._systemName.text = @"PC Games";
             break;
         case 1:
-            self.backgroundColor = [UIColor blueColor];
-            self._systemName.text = @"Sony Games List";
+            self.backgroundColor = PlayStationColor;
+            self._systemName.text = @"Playstation Games";
             break;
         case 2:
-            self.backgroundColor = [UIColor greenColor];
-            self._systemName.text = @"Microsoft Games List";
+            self.backgroundColor = XboxColor;
+            self._systemName.text = @"Xbox Games";
             break;
         case 3:
-            self.backgroundColor = [UIColor redColor];
-            self._systemName.text = @"Nintendo Games List";
+            self.backgroundColor = NintendoColor;
+            self._systemName.text = @"Nintendo Games";
             break;
         case 4:
-            self.backgroundColor = [UIColor orangeColor];
-            self._systemName.text = @"Misc Games List";
+            self.backgroundColor = EverythingColor;
+            self._systemName.text = @"Everything!";
             break;
         default:
             self.backgroundColor = [UIColor grayColor];

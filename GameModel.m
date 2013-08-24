@@ -21,38 +21,43 @@
             self.deck = [results objectForKey:@"deck"];
         }
         
-        // Will probably have to be in its own methods
+        
         self.imageURL = [NSURL URLWithString:[[results objectForKey:@"image"] objectForKey:@"thumb_url"]];
         
         self.genres = @"";
-        for (int i = 0; i < [[results objectForKey:@"genres"] count]; i++) {
-            if (i == 0) {
-                self.genres = [[[results objectForKey:@"genres"] objectAtIndex:i] objectForKey:@"name"];
-            } else {
-                self.genres = [NSString stringWithFormat:@"%@, %@", self.genres, [[[results objectForKey:@"genres"] objectAtIndex:i] objectForKey:@"name"]];
+        if ([results objectForKey:@"genres"] != [NSNull null]) {
+            for (int i = 0; i < [[results objectForKey:@"genres"] count]; i++) {
+                if (i == 0) {
+                    self.genres = [[[results objectForKey:@"genres"] objectAtIndex:i] objectForKey:@"name"];
+                } else {
+                    self.genres = [NSString stringWithFormat:@"%@, %@", self.genres, [[[results objectForKey:@"genres"] objectAtIndex:i] objectForKey:@"name"]];
+                }
             }
         }
         
         self.developers = @"";
-        for (int i = 0; i < [[results objectForKey:@"developers"] count]; i++) {
-            if (i == 0) {
-                self.developers = [[[results objectForKey:@"developers"] objectAtIndex:i] objectForKey:@"name"];
-            } else {
-                self.developers = [NSString stringWithFormat:@"%@, %@", self.developers, [[[results objectForKey:@"developers"] objectAtIndex:i] objectForKey:@"name"]];
+        if ([results objectForKey:@"developers"] != [NSNull null]) {
+            for (int i = 0; i < [[results objectForKey:@"developers"] count]; i++) {
+                if (i == 0) {
+                    self.developers = [[[results objectForKey:@"developers"] objectAtIndex:i] objectForKey:@"name"];
+                } else {
+                    self.developers = [NSString stringWithFormat:@"%@, %@", self.developers, [[[results objectForKey:@"developers"] objectAtIndex:i] objectForKey:@"name"]];
+                }
             }
         }
         
         self.publishers = @"";
-        for (int i = 0; i < [[results objectForKey:@"publishers"] count]; i++) {
-            if (i == 0) {
-                self.publishers = [[[results objectForKey:@"publishers"] objectAtIndex:i] objectForKey:@"name"];
-            } else {
-                self.publishers = [NSString stringWithFormat:@"%@, %@", self.publishers, [[[results objectForKey:@"publishers"] objectAtIndex:i] objectForKey:@"name"]];
+        if ([results objectForKey:@"publishers"] != [NSNull null]) {
+            for (int i = 0; i < [[results objectForKey:@"publishers"] count]; i++) {
+                if (i == 0) {
+                    self.publishers = [[[results objectForKey:@"publishers"] objectAtIndex:i] objectForKey:@"name"];
+                } else {
+                    self.publishers = [NSString stringWithFormat:@"%@, %@", self.publishers, [[[results objectForKey:@"publishers"] objectAtIndex:i] objectForKey:@"name"]];
+                }
             }
         }
-        
         self.ageRating = @"";
-        if ([[results objectForKey:@"original_game_rating"] count] > 0) {
+        if ([results objectForKey:@"original_game_rating"] != [NSNull null]) {
             self.ageRating = [[[results objectForKey:@"original_game_rating"] objectAtIndex:0] objectForKey:@"name"];
         }
         
@@ -74,11 +79,13 @@
         }
         
         self.platforms = @"";
-        for (int i = 0; i < [[results objectForKey:@"platforms"] count]; i++) {
-            if (i == 0) {
-                self.platforms = [[[results objectForKey:@"platforms"] objectAtIndex:i] objectForKey:@"name"];
-            } else {
-                self.platforms = [NSString stringWithFormat:@"%@, %@", self.platforms, [[[results objectForKey:@"platforms"] objectAtIndex:i] objectForKey:@"name"]];
+        if ([results objectForKey:@"platforms"] != [NSNull null]) {
+            for (int i = 0; i < [[results objectForKey:@"platforms"] count]; i++) {
+                if (i == 0) {
+                    self.platforms = [[[results objectForKey:@"platforms"] objectAtIndex:i] objectForKey:@"name"];
+                } else {
+                    self.platforms = [NSString stringWithFormat:@"%@, %@", self.platforms, [[[results objectForKey:@"platforms"] objectAtIndex:i] objectForKey:@"name"]];
+                }
             }
         }
         

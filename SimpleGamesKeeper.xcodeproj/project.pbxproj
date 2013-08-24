@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		AB03919A17B334BA003708A3 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03919917B334BA003708A3 /* DataLoader.m */; };
 		AB0E661C17AB4BF50059BD9F /* GiantBombAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */; };
+		AB19A0D517C96DF1007CAFDA /* logoEvery.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0CF17C96DF1007CAFDA /* logoEvery.png */; };
+		AB19A0D617C96DF1007CAFDA /* logoNintendo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D017C96DF1007CAFDA /* logoNintendo.png */; };
+		AB19A0D717C96DF1007CAFDA /* logoPC.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D117C96DF1007CAFDA /* logoPC.png */; };
+		AB19A0D817C96DF1007CAFDA /* logoPS.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D217C96DF1007CAFDA /* logoPS.png */; };
+		AB19A0D917C96DF1007CAFDA /* logoXBOX.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D317C96DF1007CAFDA /* logoXBOX.png */; };
+		AB19A0DA17C96DF1007CAFDA /* newBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D417C96DF1007CAFDA /* newBackground.png */; };
 		AB4AF7EC17B0565B0067A390 /* SGKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */; };
 		ABE258CA17B824C800A184B2 /* SGKGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258C917B824C800A184B2 /* SGKGameViewController.m */; };
 		ABE258CD17B8648C00A184B2 /* SGKGameScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258CC17B8648C00A184B2 /* SGKGameScrollView.m */; };
@@ -42,6 +48,12 @@
 		AB03919917B334BA003708A3 /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
 		AB0E661A17AB4BF50059BD9F /* GiantBombAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GiantBombAPI.h; path = ../GiantBombAPI.h; sourceTree = "<group>"; };
 		AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GiantBombAPI.m; path = ../GiantBombAPI.m; sourceTree = "<group>"; };
+		AB19A0CF17C96DF1007CAFDA /* logoEvery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoEvery.png; path = Images/logoEvery.png; sourceTree = "<group>"; };
+		AB19A0D017C96DF1007CAFDA /* logoNintendo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoNintendo.png; path = Images/logoNintendo.png; sourceTree = "<group>"; };
+		AB19A0D117C96DF1007CAFDA /* logoPC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoPC.png; path = Images/logoPC.png; sourceTree = "<group>"; };
+		AB19A0D217C96DF1007CAFDA /* logoPS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoPS.png; path = Images/logoPS.png; sourceTree = "<group>"; };
+		AB19A0D317C96DF1007CAFDA /* logoXBOX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoXBOX.png; path = Images/logoXBOX.png; sourceTree = "<group>"; };
+		AB19A0D417C96DF1007CAFDA /* newBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newBackground.png; path = Images/newBackground.png; sourceTree = "<group>"; };
 		AB4AF7EA17B0565B0067A390 /* SGKTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTableViewCell.h; sourceTree = "<group>"; };
 		AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTableViewCell.m; sourceTree = "<group>"; };
 		ABE258C817B824C800A184B2 /* SGKGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKGameViewController.h; sourceTree = "<group>"; };
@@ -198,6 +210,12 @@
 		ABF0C35217A44C7B0042E9A2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AB19A0CF17C96DF1007CAFDA /* logoEvery.png */,
+				AB19A0D017C96DF1007CAFDA /* logoNintendo.png */,
+				AB19A0D117C96DF1007CAFDA /* logoPC.png */,
+				AB19A0D217C96DF1007CAFDA /* logoPS.png */,
+				AB19A0D317C96DF1007CAFDA /* logoXBOX.png */,
+				AB19A0D417C96DF1007CAFDA /* newBackground.png */,
 				ABF0C35717A450E50042E9A2 /* misc.png */,
 				ABF0C35817A450E50042E9A2 /* nintendo.png */,
 				ABF0C35917A450E50042E9A2 /* PC.png */,
@@ -273,6 +291,12 @@
 				ABF0C35E17A450E50042E9A2 /* PC.png in Resources */,
 				ABF0C35F17A450E50042E9A2 /* playstation.png in Resources */,
 				ABF0C36017A450E50042E9A2 /* xbox.png in Resources */,
+				AB19A0D517C96DF1007CAFDA /* logoEvery.png in Resources */,
+				AB19A0D617C96DF1007CAFDA /* logoNintendo.png in Resources */,
+				AB19A0D717C96DF1007CAFDA /* logoPC.png in Resources */,
+				AB19A0D817C96DF1007CAFDA /* logoPS.png in Resources */,
+				AB19A0D917C96DF1007CAFDA /* logoXBOX.png in Resources */,
+				AB19A0DA17C96DF1007CAFDA /* newBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

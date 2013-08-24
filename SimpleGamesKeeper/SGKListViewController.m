@@ -77,7 +77,7 @@
 
 - (void)initSearchBar {
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navBar.frame), self.view.frame.size.width, 44)];
-    _searchBar.tintColor = [UIColor darkGrayColor];
+    _searchBar.tintColor = [UIColor lightGrayColor];
     _searchBar.delegate = self;
     [self.view addSubview:_searchBar];
     
@@ -116,7 +116,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    cell.textLabel.textAlignment = NSTextAlignmentLeft;
     // Configure the cell...
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
@@ -144,15 +144,19 @@
                 // If there are results available, display @"Loading More..." in the last cell
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                                reuseIdentifier:CellIdentifier];
+                UIFont *customFont = [UIFont fontWithName:@"Marker Felt" size:16.0f];
+                cell.textLabel.font = customFont;
                 cell.textLabel.text = @"Loading More...";
-                cell.textLabel.font = [UIFont systemFontOfSize:18];
+                cell.textLabel.textAlignment = NSTextAlignmentCenter;
                 return cell;
             } else {
                 // If there are no results available, display @"Loading More..." in the last cell
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                                reuseIdentifier:CellIdentifier];
-                cell.textLabel.font = [UIFont systemFontOfSize:16];
-                cell.textLabel.text = @"(No More Results Available)";
+                UIFont *customFont = [UIFont fontWithName:@"Marker Felt" size:16.0f];
+                cell.textLabel.font = customFont;
+                cell.textLabel.text = @"No More Results Available";
+                cell.textLabel.textAlignment = NSTextAlignmentCenter;
                 return cell;
             }
         }

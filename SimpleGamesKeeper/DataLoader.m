@@ -39,14 +39,24 @@
 //                delegate._gamesArray = nil;
 //            // new dictionary, so we just add it.
 //            } else {
-            [delegate._gamesArray addObjectsFromArray:[delegate._gamesDictionary objectForKey:@"results"]];
-
-            
             int dictionaryCount = [[delegate._gamesDictionary objectForKey:@"number_of_total_results"] intValue];
-            NSLog(@"gamesarray: %d", [delegate._gamesArray count]);
-            NSLog(@"gamesDict: %d", dictionaryCount);
-            if ([delegate._gamesArray count] == dictionaryCount) {
-                delegate.noMoreResultsAvail = YES;
+            
+            if (dictionaryCount != 0) {
+                [delegate._gamesArray addObjectsFromArray:[delegate._gamesDictionary objectForKey:@"results"]];
+                NSLog(@"gamesarray: %d", [delegate._gamesArray count]);
+                NSLog(@"gamesDict: %d", dictionaryCount);
+                if ([delegate._gamesArray count] == dictionaryCount) {
+                    delegate.noMoreResultsAvail = YES;
+                }
+            } else {
+                [delegate._gamesArray removeAllObjects];
+                UIAlertView *noResults = [[UIAlertView alloc] initWithTitle:@"No Search Results"
+                                                                    message:@"Sorry! Your query did not produce any results."
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"Try again!"
+                                                          otherButtonTitles: nil];
+                [noResults show];
+                delegate._gamesArray = nil;
             }
             [delegate._gamesTableView reloadData];
             delegate.loading = NO;
