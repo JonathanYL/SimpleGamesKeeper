@@ -5,9 +5,10 @@
 //  Created by Jonathan Yeung on 2013-07-27.
 //  Copyright (c) 2013 Jonathan Yeung. All rights reserved.
 //
-
+#import <QuartzCore/QuartzCore.h>
 #import "SGKViewControllerViewController.h"
 #import "iCarousel.h"
+#import "SGKTileReflectionView.h"
 
 @interface SGKViewControllerViewController () <iCarouselDataSource, iCarouselDelegate>
 
@@ -31,12 +32,6 @@
 {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
-//        //set up data
-//        self.items = [NSMutableArray array];
-//        for (int i = 0; i < 1000; i++)
-//        {
-//            [items addObject:[NSNumber numberWithInt:i]];
-//        }
         [self initDisplayTiles];
     }
     return self;
@@ -127,9 +122,11 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150.0f, 150.0f)];
-        ((UIImageView *)view).image = [UIImage imageNamed:@"page.png"];
-        view.contentMode = UIViewContentModeCenter;
+//        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
+//        ((UIImageView *)view).image = [UIImage imageNamed:@"page.png"];
+        
+        view = [[SGKTileReflectionView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
+    
         label.tag = 1;
         [view addSubview:label];
     }
@@ -144,7 +141,8 @@
     //views outside of the `if (view == nil) {...}` check otherwise
     //you'll get weird issues with carousel item content appearing
     //in the wrong place in the carousel
-    ((UIImageView *)view).image = consolePic;
+    // ((UIImageView *)view).image = consolePic;
+    [((SGKTileReflectionView *)view) initImage:consolePic];
     return view;
 }
 

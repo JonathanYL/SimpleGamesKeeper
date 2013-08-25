@@ -15,6 +15,8 @@
 		AB19A0D817C96DF1007CAFDA /* logoPS.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D217C96DF1007CAFDA /* logoPS.png */; };
 		AB19A0D917C96DF1007CAFDA /* logoXBOX.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D317C96DF1007CAFDA /* logoXBOX.png */; };
 		AB19A0DA17C96DF1007CAFDA /* newBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D417C96DF1007CAFDA /* newBackground.png */; };
+		AB19A0DD17C9747C007CAFDA /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19A0DC17C9747C007CAFDA /* ReflectionView.m */; };
+		AB19A0E317C976DB007CAFDA /* SGKTileReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19A0E217C976DB007CAFDA /* SGKTileReflectionView.m */; };
 		AB4AF7EC17B0565B0067A390 /* SGKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */; };
 		ABE258CA17B824C800A184B2 /* SGKGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258C917B824C800A184B2 /* SGKGameViewController.m */; };
 		ABE258CD17B8648C00A184B2 /* SGKGameScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258CC17B8648C00A184B2 /* SGKGameScrollView.m */; };
@@ -54,6 +56,10 @@
 		AB19A0D217C96DF1007CAFDA /* logoPS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoPS.png; path = Images/logoPS.png; sourceTree = "<group>"; };
 		AB19A0D317C96DF1007CAFDA /* logoXBOX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoXBOX.png; path = Images/logoXBOX.png; sourceTree = "<group>"; };
 		AB19A0D417C96DF1007CAFDA /* newBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newBackground.png; path = Images/newBackground.png; sourceTree = "<group>"; };
+		AB19A0DB17C9747C007CAFDA /* ReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionView.h; sourceTree = "<group>"; };
+		AB19A0DC17C9747C007CAFDA /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
+		AB19A0E117C976DB007CAFDA /* SGKTileReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTileReflectionView.h; sourceTree = "<group>"; };
+		AB19A0E217C976DB007CAFDA /* SGKTileReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTileReflectionView.m; sourceTree = "<group>"; };
 		AB4AF7EA17B0565B0067A390 /* SGKTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTableViewCell.h; sourceTree = "<group>"; };
 		AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTableViewCell.m; sourceTree = "<group>"; };
 		ABE258C817B824C800A184B2 /* SGKGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKGameViewController.h; sourceTree = "<group>"; };
@@ -131,6 +137,8 @@
 				AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */,
 				ABECC41B17A4C1520089EED6 /* SGKNavView.h */,
 				ABECC41C17A4C1520089EED6 /* SGKNavView.m */,
+				AB19A0E117C976DB007CAFDA /* SGKTileReflectionView.h */,
+				AB19A0E217C976DB007CAFDA /* SGKTileReflectionView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -183,6 +191,8 @@
 		ABF0C32E17A444F00042E9A2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB19A0DB17C9747C007CAFDA /* ReflectionView.h */,
+				AB19A0DC17C9747C007CAFDA /* ReflectionView.m */,
 				ABF0C33617A444F00042E9A2 /* SGKViewControllerAppDelegate.h */,
 				ABF0C33717A444F00042E9A2 /* SGKViewControllerAppDelegate.m */,
 				ABF0C34217A444F00042E9A2 /* SGKViewControllerViewController.xib */,
@@ -319,6 +329,8 @@
 				ABE258CA17B824C800A184B2 /* SGKGameViewController.m in Sources */,
 				ABE258CD17B8648C00A184B2 /* SGKGameScrollView.m in Sources */,
 				ABE258D017B864ED00A184B2 /* GameModel.m in Sources */,
+				AB19A0DD17C9747C007CAFDA /* ReflectionView.m in Sources */,
+				AB19A0E317C976DB007CAFDA /* SGKTileReflectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
