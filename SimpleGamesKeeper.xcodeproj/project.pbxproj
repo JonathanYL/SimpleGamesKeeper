@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB03919A17B334BA003708A3 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03919917B334BA003708A3 /* DataLoader.m */; };
 		AB0E661C17AB4BF50059BD9F /* GiantBombAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */; };
+		AB12C19517CA5D2A00BC4AE7 /* logoCollection.png in Resources */ = {isa = PBXBuildFile; fileRef = AB12C19417CA5D2A00BC4AE7 /* logoCollection.png */; };
 		AB19A0D517C96DF1007CAFDA /* logoEvery.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0CF17C96DF1007CAFDA /* logoEvery.png */; };
 		AB19A0D617C96DF1007CAFDA /* logoNintendo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D017C96DF1007CAFDA /* logoNintendo.png */; };
 		AB19A0D717C96DF1007CAFDA /* logoPC.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D117C96DF1007CAFDA /* logoPC.png */; };
@@ -17,6 +18,15 @@
 		AB19A0DA17C96DF1007CAFDA /* newBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D417C96DF1007CAFDA /* newBackground.png */; };
 		AB19A0DD17C9747C007CAFDA /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19A0DC17C9747C007CAFDA /* ReflectionView.m */; };
 		AB19A0E317C976DB007CAFDA /* SGKTileReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19A0E217C976DB007CAFDA /* SGKTileReflectionView.m */; };
+		AB19A0F917C9A7CB007CAFDA /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F017C9A7CB007CAFDA /* Roboto-Black.ttf */; };
+		AB19A0FA17C9A7CB007CAFDA /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F117C9A7CB007CAFDA /* Roboto-Bold.ttf */; };
+		AB19A0FB17C9A7CB007CAFDA /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F217C9A7CB007CAFDA /* Roboto-Light.ttf */; };
+		AB19A0FC17C9A7CB007CAFDA /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F317C9A7CB007CAFDA /* Roboto-Medium.ttf */; };
+		AB19A0FD17C9A7CB007CAFDA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F417C9A7CB007CAFDA /* Roboto-Regular.ttf */; };
+		AB19A0FE17C9A7CB007CAFDA /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F517C9A7CB007CAFDA /* Roboto-Thin.ttf */; };
+		AB19A0FF17C9A7CB007CAFDA /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F617C9A7CB007CAFDA /* RobotoCondensed-Bold.ttf */; };
+		AB19A10017C9A7CB007CAFDA /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F717C9A7CB007CAFDA /* RobotoCondensed-Light.ttf */; };
+		AB19A10117C9A7CB007CAFDA /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F817C9A7CB007CAFDA /* RobotoCondensed-Regular.ttf */; };
 		AB4AF7EC17B0565B0067A390 /* SGKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */; };
 		ABE258CA17B824C800A184B2 /* SGKGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258C917B824C800A184B2 /* SGKGameViewController.m */; };
 		ABE258CD17B8648C00A184B2 /* SGKGameScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258CC17B8648C00A184B2 /* SGKGameScrollView.m */; };
@@ -50,6 +60,7 @@
 		AB03919917B334BA003708A3 /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
 		AB0E661A17AB4BF50059BD9F /* GiantBombAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GiantBombAPI.h; path = ../GiantBombAPI.h; sourceTree = "<group>"; };
 		AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GiantBombAPI.m; path = ../GiantBombAPI.m; sourceTree = "<group>"; };
+		AB12C19417CA5D2A00BC4AE7 /* logoCollection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoCollection.png; path = Images/logoCollection.png; sourceTree = "<group>"; };
 		AB19A0CF17C96DF1007CAFDA /* logoEvery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoEvery.png; path = Images/logoEvery.png; sourceTree = "<group>"; };
 		AB19A0D017C96DF1007CAFDA /* logoNintendo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoNintendo.png; path = Images/logoNintendo.png; sourceTree = "<group>"; };
 		AB19A0D117C96DF1007CAFDA /* logoPC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoPC.png; path = Images/logoPC.png; sourceTree = "<group>"; };
@@ -60,6 +71,15 @@
 		AB19A0DC17C9747C007CAFDA /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
 		AB19A0E117C976DB007CAFDA /* SGKTileReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTileReflectionView.h; sourceTree = "<group>"; };
 		AB19A0E217C976DB007CAFDA /* SGKTileReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTileReflectionView.m; sourceTree = "<group>"; };
+		AB19A0F017C9A7CB007CAFDA /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		AB19A0F117C9A7CB007CAFDA /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		AB19A0F217C9A7CB007CAFDA /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		AB19A0F317C9A7CB007CAFDA /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		AB19A0F417C9A7CB007CAFDA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		AB19A0F517C9A7CB007CAFDA /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		AB19A0F617C9A7CB007CAFDA /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		AB19A0F717C9A7CB007CAFDA /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		AB19A0F817C9A7CB007CAFDA /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		AB4AF7EA17B0565B0067A390 /* SGKTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTableViewCell.h; sourceTree = "<group>"; };
 		AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTableViewCell.m; sourceTree = "<group>"; };
 		ABE258C817B824C800A184B2 /* SGKGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKGameViewController.h; sourceTree = "<group>"; };
@@ -128,6 +148,31 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		AB19A0EE17C9A753007CAFDA /* ReflectionView */ = {
+			isa = PBXGroup;
+			children = (
+				AB19A0DB17C9747C007CAFDA /* ReflectionView.h */,
+				AB19A0DC17C9747C007CAFDA /* ReflectionView.m */,
+			);
+			name = ReflectionView;
+			sourceTree = "<group>";
+		};
+		AB19A0EF17C9A796007CAFDA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AB19A0F017C9A7CB007CAFDA /* Roboto-Black.ttf */,
+				AB19A0F117C9A7CB007CAFDA /* Roboto-Bold.ttf */,
+				AB19A0F217C9A7CB007CAFDA /* Roboto-Light.ttf */,
+				AB19A0F317C9A7CB007CAFDA /* Roboto-Medium.ttf */,
+				AB19A0F417C9A7CB007CAFDA /* Roboto-Regular.ttf */,
+				AB19A0F517C9A7CB007CAFDA /* Roboto-Thin.ttf */,
+				AB19A0F617C9A7CB007CAFDA /* RobotoCondensed-Bold.ttf */,
+				AB19A0F717C9A7CB007CAFDA /* RobotoCondensed-Light.ttf */,
+				AB19A0F817C9A7CB007CAFDA /* RobotoCondensed-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		ABECC41A17A4C1310089EED6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +227,6 @@
 				ABECC41817A4C0F40089EED6 /* SGKListViewController.m */,
 				ABE258C817B824C800A184B2 /* SGKGameViewController.h */,
 				ABE258C917B824C800A184B2 /* SGKGameViewController.m */,
-				ABF0C35117A448210042E9A2 /* iCarousel */,
 				ABF0C32E17A444F00042E9A2 /* Supporting Files */,
 			);
 			path = SimpleGamesKeeper;
@@ -191,12 +235,13 @@
 		ABF0C32E17A444F00042E9A2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AB19A0DB17C9747C007CAFDA /* ReflectionView.h */,
-				AB19A0DC17C9747C007CAFDA /* ReflectionView.m */,
+				AB19A0EF17C9A796007CAFDA /* Fonts */,
+				AB19A0EE17C9A753007CAFDA /* ReflectionView */,
+				ABF0C35117A448210042E9A2 /* iCarousel */,
+				ABF0C35217A44C7B0042E9A2 /* Images */,
 				ABF0C33617A444F00042E9A2 /* SGKViewControllerAppDelegate.h */,
 				ABF0C33717A444F00042E9A2 /* SGKViewControllerAppDelegate.m */,
 				ABF0C34217A444F00042E9A2 /* SGKViewControllerViewController.xib */,
-				ABF0C35217A44C7B0042E9A2 /* Images */,
 				ABF0C32F17A444F00042E9A2 /* SimpleGamesKeeper-Info.plist */,
 				ABF0C33017A444F00042E9A2 /* InfoPlist.strings */,
 				ABF0C33317A444F00042E9A2 /* main.m */,
@@ -220,6 +265,7 @@
 		ABF0C35217A44C7B0042E9A2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AB12C19417CA5D2A00BC4AE7 /* logoCollection.png */,
 				AB19A0CF17C96DF1007CAFDA /* logoEvery.png */,
 				AB19A0D017C96DF1007CAFDA /* logoNintendo.png */,
 				AB19A0D117C96DF1007CAFDA /* logoPC.png */,
@@ -307,6 +353,16 @@
 				AB19A0D817C96DF1007CAFDA /* logoPS.png in Resources */,
 				AB19A0D917C96DF1007CAFDA /* logoXBOX.png in Resources */,
 				AB19A0DA17C96DF1007CAFDA /* newBackground.png in Resources */,
+				AB19A0F917C9A7CB007CAFDA /* Roboto-Black.ttf in Resources */,
+				AB19A0FA17C9A7CB007CAFDA /* Roboto-Bold.ttf in Resources */,
+				AB19A0FB17C9A7CB007CAFDA /* Roboto-Light.ttf in Resources */,
+				AB19A0FC17C9A7CB007CAFDA /* Roboto-Medium.ttf in Resources */,
+				AB19A0FD17C9A7CB007CAFDA /* Roboto-Regular.ttf in Resources */,
+				AB19A0FE17C9A7CB007CAFDA /* Roboto-Thin.ttf in Resources */,
+				AB19A0FF17C9A7CB007CAFDA /* RobotoCondensed-Bold.ttf in Resources */,
+				AB19A10017C9A7CB007CAFDA /* RobotoCondensed-Light.ttf in Resources */,
+				AB19A10117C9A7CB007CAFDA /* RobotoCondensed-Regular.ttf in Resources */,
+				AB12C19517CA5D2A00BC4AE7 /* logoCollection.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

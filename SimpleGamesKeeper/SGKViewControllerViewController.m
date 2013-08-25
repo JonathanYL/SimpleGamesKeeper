@@ -47,12 +47,14 @@
     UIImage *xboxImage = [UIImage imageNamed:@"logoXBOX.png"];
     UIImage *nintendoImage = [UIImage imageNamed:@"logoNintendo.png"];
     UIImage *miscImage = [UIImage imageNamed:@"logoEvery.png"];
+    UIImage *collectionImage = [UIImage imageNamed:@"logoCollection.png"];
     
     [items addObject:pcImage];
     [items addObject:playstationImage];
     [items addObject:xboxImage];
     [items addObject:nintendoImage];
     [items addObject:miscImage];
+    [items addObject:collectionImage];
 }
 
 - (void)dealloc
@@ -67,7 +69,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
     wrap = YES;
     
     // add background
@@ -76,6 +77,7 @@
     backgroundView.image = [UIImage imageNamed:@"newBackground.png"];
     [self.view addSubview:backgroundView];
     
+    [self initTitle];
     //create carousel
 	carousel = [[iCarousel alloc] initWithFrame:self.view.bounds];
 	carousel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -84,15 +86,27 @@
 	carousel.dataSource = self;
     
     
-    label = [[UILabel alloc] initWithFrame:(CGRectMake(0, 400, self.view.frame.size.width, 20))];
+    label = [[UILabel alloc] initWithFrame:(CGRectMake(0, 400, self.view.frame.size.width, 25))];
     label.backgroundColor = [UIColor clearColor];
     // [self.label setCenter:self.view.center];
 	//add carousel to view
-    label.text = @"PC";
-    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont fontWithName:@"Roboto-Light" size:22.0f];
+    label.text = @"Personal Computer";
+    
+    label.textColor = [UIColor darkGrayColor];
     label.textAlignment = NSTextAlignmentCenter;
 	[self.view addSubview:carousel];
     [self.view addSubview:label];
+}
+
+- (void)initTitle {
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 35)];
+    title.font = [UIFont fontWithName:@"RobotoCondensed-Light" size:32.0f];
+    title.text = @"Simple Games Keeper";
+    title.textAlignment = NSTextAlignmentCenter;
+    title.backgroundColor = [UIColor clearColor];
+    title.textColor = [UIColor darkGrayColor];
+    [self.view addSubview:title];
 }
 
 - (void)viewDidUnload
@@ -149,15 +163,17 @@
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel {
     int currentIndex = carousel.currentItemIndex;
     if (currentIndex == 0) {
-        self.label.text = @"PC";
+        self.label.text = @"Personal Computer";
     } else if (currentIndex == 1) {
-        self.label.text = @"PS3";
+        self.label.text = @"Sony";
     } else if (currentIndex == 2) {
-        self.label.text = @"Xbox";
+        self.label.text = @"Microsoft";
     } else if (currentIndex == 3) {
         self.label.text = @"Nintendo";
     } else if (currentIndex == 4) {
-        self.label.text = @"Misc";
+        self.label.text = @"All";
+    } else if (currentIndex == 5) {
+        self.label.text = @"My Collection";
     }
 }
 

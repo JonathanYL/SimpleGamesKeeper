@@ -35,10 +35,6 @@
                                                        error:&error];
         dispatch_async(dispatch_get_main_queue(), ^{
             // no results generated
-//            if ([[delegate._gamesDictionary objectForKey:@"results"] count] == 0) {
-//                delegate._gamesArray = nil;
-//            // new dictionary, so we just add it.
-//            } else {
             int dictionaryCount = [[delegate._gamesDictionary objectForKey:@"number_of_total_results"] intValue];
             
             if (dictionaryCount != 0) {
@@ -51,7 +47,7 @@
             } else {
                 [delegate._gamesArray removeAllObjects];
                 UIAlertView *noResults = [[UIAlertView alloc] initWithTitle:@"No Search Results"
-                                                                    message:@"Sorry! Your query did not produce any results."
+                                                                    message:@"Sorry! Your query did not yield any results."
                                                                    delegate:nil
                                                           cancelButtonTitle:@"Try again!"
                                                           otherButtonTitles: nil];
@@ -60,6 +56,8 @@
             }
             [delegate._gamesTableView reloadData];
             delegate.loading = NO;
+            [delegate._activityIndicator removeFromSuperview];
+            [delegate._overlayView removeFromSuperview];
         });
         
     });
@@ -75,10 +73,12 @@
                                                                    options:kNilOptions
                                                                      error:&error];
         dispatch_async(dispatch_get_main_queue(), ^{
-//            NSString *blah = [[gameDelegate._gameResult objectForKey:@"results"] objectForKey:@"description"];
-//            NSLog(@"%@", blah);
             [gameDelegate initGameModelClassAndPushNavigationController];
             [gameDelegate initMainView];
+            [gameDelegate._activityIndicator removeFromSuperview];
+            [gameDelegate._overlayView removeFromSuperview];
+            gameDelegate._overlayView = nil;
+            gameDelegate._activityIndicator = nil;
         });
     });
 }

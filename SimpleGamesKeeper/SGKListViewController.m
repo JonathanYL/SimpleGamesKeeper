@@ -22,6 +22,8 @@
 @synthesize _gamesDictionary;
 @synthesize _gamesArray;
 @synthesize _searchBar;
+@synthesize _activityIndicator;
+@synthesize _overlayView;
 
 @synthesize fetchBatch;
 @synthesize loading;
@@ -76,7 +78,7 @@
 }
 
 - (void)initSearchBar {
-    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navBar.frame), self.view.frame.size.width, 44)];
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navBar.frame)+1, self.view.frame.size.width, 44)];
     _searchBar.tintColor = [UIColor lightGrayColor];
     _searchBar.delegate = self;
     [self.view addSubview:_searchBar];
@@ -88,6 +90,20 @@
     _gamesTableView.delegate = self;
     _gamesTableView.dataSource = self;
     [self.view addSubview:_gamesTableView];
+}
+
+- (void)initLoading {
+    _overlayView = nil;
+    _activityIndicator = nil;
+    _overlayView = [[UIView alloc] init];
+    _overlayView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    _overlayView.frame = self._gamesTableView.bounds;
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    CGRect frame = _overlayView.frame;
+    _activityIndicator.center = CGPointMake(frame.size.width/2, frame.size.height/2);
+    [_overlayView addSubview:_activityIndicator];
+    [_activityIndicator startAnimating];
+    [_gamesTableView addSubview:_overlayView];
 }
 
 #pragma mark - other
@@ -134,7 +150,7 @@
     if ([self._gamesArray count] != 0) {
         if (indexPath.row < [self._gamesArray count]) {
             NSDictionary *game = [_gamesArray objectAtIndex:indexPath.row];
-            UIFont *sampleFont = [UIFont fontWithName:@"Helvetica" size:14.0];
+            UIFont *sampleFont = [UIFont fontWithName:@"Roboto-Regular" size:15.0f];
             NSString *text = [game objectForKey:@"name"];
             [cell.textLabel setFont:sampleFont];
             cell.textLabel.text = text;
@@ -144,7 +160,7 @@
                 // If there are results available, display @"Loading More..." in the last cell
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                                reuseIdentifier:CellIdentifier];
-                UIFont *customFont = [UIFont fontWithName:@"Marker Felt" size:16.0f];
+                UIFont *customFont = [UIFont fontWithName:@"Roboto-Bold" size:16.0f];
                 cell.textLabel.font = customFont;
                 cell.textLabel.text = @"Loading More...";
                 cell.textLabel.textAlignment = NSTextAlignmentCenter;
@@ -153,7 +169,7 @@
                 // If there are no results available, display @"Loading More..." in the last cell
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                                reuseIdentifier:CellIdentifier];
-                UIFont *customFont = [UIFont fontWithName:@"Marker Felt" size:16.0f];
+                UIFont *customFont = [UIFont fontWithName:@"Roboto-Bold" size:16.0f];
                 cell.textLabel.font = customFont;
                 cell.textLabel.text = @"No More Results Available";
                 cell.textLabel.textAlignment = NSTextAlignmentCenter;
@@ -181,6 +197,7 @@
     _gamesArray = nil;
     _gamesDictionary = [NSMutableDictionary dictionary];
     _gamesArray = [NSMutableArray array];
+    [self initLoading];
     [self loadRequest:searchBar.text];
     [_searchBar resignFirstResponder];
 }

@@ -54,7 +54,7 @@
     self._systemName = [[UILabel alloc] initWithFrame:CGRectMake(0,0,self.frame.size.width,self.frame.size.height)];
     self._systemName.textColor = [UIColor whiteColor];
     self._systemName.textAlignment = NSTextAlignmentCenter;
-    UIFont *customFont = [UIFont fontWithName:@"Marker Felt" size:23.0f];
+    UIFont *customFont = [UIFont fontWithName:@"Roboto-Light" size:23.0f];
     [self._systemName setFont:customFont];
     self._systemName.backgroundColor = [UIColor clearColor];
     // Get's a little different here.

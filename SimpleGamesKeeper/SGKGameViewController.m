@@ -40,6 +40,8 @@
 @synthesize _gameResult;
 @synthesize _scrollView;
 @synthesize _game;
+@synthesize _overlayView;
+@synthesize _activityIndicator;
 
 - (id)initWithURLDetail:(NSString *)urlString andIndex:(int)carouselIndex{
     self = [super init];
@@ -56,6 +58,7 @@
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self initNavBar:index];
+    [self initLoading];
     [self callAPI];
     // [self performSelectorOnMainThread:@selector(callAPI) withObject:nil waitUntilDone:YES];
 
@@ -85,6 +88,17 @@
     NSLog(@"%@", _game.publishers);
     NSLog(@"%@", _game.ageRating);
     NSLog(@"%@", _game.platforms);
+}
+
+- (void)initLoading {
+    _overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navBar.frame)+1, self.view.frame.size.width, self.view.frame.size.height - _navBar.frame.size.height)];
+    _overlayView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    CGRect frame = _overlayView.frame;
+    _activityIndicator.center = CGPointMake(frame.size.width/2, frame.size.height/2);
+    [_overlayView addSubview:_activityIndicator];
+    [_activityIndicator startAnimating];
+    [self.view addSubview:_overlayView];
 }
 
 - (void)callAPI {
@@ -148,14 +162,15 @@
 // Gonna create a nice reflection. Later
 - (void)initAddButton {
     addButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMinX(imageView.frame), MAX(CGRectGetMaxY(imageView.frame), CGRectGetMaxY(releaseDateLabel.frame))+10, 30, 30)];
-    addButton.backgroundColor = [UIColor colorWithRed:141.0f/255.0f green:194.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
+    addButton.backgroundColor = [UIColor darkGrayColor];
     [addButton setTitle:@"+" forState:UIControlStateNormal];
-    addButton.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+    addButton.titleLabel.font = [UIFont boldSystemFontOfSize:30.0f];
     addButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [addButton setContentVerticalAlignment:UIControlContentVerticalAlignmentBottom];
     addButton.layer.cornerRadius = 10;
     
     buttonLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(addButton.frame)+10, CGRectGetMinY(addButton.frame), screenWidth-CGRectGetWidth(addButton.frame)-20, CGRectGetHeight(addButton.frame))];
-    buttonLabel.font = [UIFont systemFontOfSize:15.0f];
+    buttonLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:15.0f];
     buttonLabel.textColor = [UIColor blackColor];
     buttonLabel.text = @"Add Game to Collection";
     
@@ -167,29 +182,29 @@
 - (void)initName {
     nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageView.frame)+5, 6, CGRectGetWidth(self.view.frame) - CGRectGetWidth(imageView.frame) - 20, 400)];
     nameLabel.text = _game.name;
-    nameLabel.font = [UIFont boldSystemFontOfSize:14.0f];
+    nameLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:14.0f];
     [self customizeLabel:nameLabel];
 }
 
 - (void)initDeveloper {
     developerLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(nameLabel.frame), CGRectGetMaxY(nameLabel.frame)+2, nameLabel.frame.size.width, 0)];
     developerLabel.text = _game.developers;
-    developerLabel.font = [UIFont systemFontOfSize:12.0f];
+    developerLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:12.0f];
     [self customizeLabel:developerLabel];
 }
 
 - (void)initReleaseDate {
     releaseDateLabel = [[UILabel alloc] initWithFrame:CGRectMake((CGRectGetMinX(developerLabel.frame)), CGRectGetMaxY(developerLabel.frame)+2, developerLabel.frame.size.width, 0)];
     releaseDateLabel.text = _game.releaseDate;
-    releaseDateLabel.font = [UIFont systemFontOfSize:12.0f];
+    releaseDateLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:12.0f];
     [self customizeLabel:releaseDateLabel];
     
 }
 
 - (void)initDescriptionHeader {
-    descriptionHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(addButton.frame)+10, screenWidth, 25)];
+    descriptionHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(addButton.frame)+10, screenWidth, 30)];
     descriptionHeader.text = @"  Description";
-    UIFont *customFont = [UIFont fontWithName:@"Marker Felt" size:20.0f];
+    UIFont *customFont = [UIFont fontWithName:@"Roboto-Light" size:20.0f];
     descriptionHeader.textColor = [UIColor whiteColor];
     [descriptionHeader setFont:customFont];
     descriptionHeader.backgroundColor = _navBar.backgroundColor;
@@ -210,14 +225,14 @@
 - (void)initDescriptionLabel {
     descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(descriptionHeader.frame)+5, screenWidth-5, 25)];
     descriptionLabel.text = _game.deck;
-    descriptionLabel.font = [UIFont systemFontOfSize:14.0f];
+    descriptionLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:14.0f];
     [self customizeLabel:descriptionLabel];
 }
 
 - (void)initGameDetailsHeader {
-    gameDetailHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(descriptionLabel.frame)+10, screenWidth, 25)];
+    gameDetailHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(descriptionLabel.frame)+10, screenWidth, 30)];
     gameDetailHeader.text = @"  Additional Information";
-    UIFont *customFont = [UIFont fontWithName:@"Marker Felt" size:20.0f];
+    UIFont *customFont = [UIFont fontWithName:@"Roboto-Light" size:20.0f];
     gameDetailHeader.textColor = [UIColor whiteColor];
     [gameDetailHeader setFont:customFont];
     gameDetailHeader.backgroundColor = _navBar.backgroundColor;
@@ -240,7 +255,7 @@
     // Publisher Title
     UILabel *publisherTitle = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(gameDetailHeader.frame)+5, 100, 20)];
     publisherTitle.text = @"Publisher:";
-    publisherTitle.font = [UIFont boldSystemFontOfSize:14.0f];
+    publisherTitle.font = [UIFont fontWithName:@"Roboto-Medium" size:14.0f];
     // publisherTitle.backgroundColor = [UIColor blueColor];
     [_scrollView addSubview:publisherTitle];
     
@@ -248,7 +263,7 @@
     // Publisher info
     addInfoPublisher = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(publisherTitle.frame)+5, CGRectGetMaxY(gameDetailHeader.frame)+5, screenWidth-CGRectGetWidth(publisherTitle.frame)-10, 20)];
     addInfoPublisher.text = _game.publishers;
-    addInfoPublisher.font = [UIFont systemFontOfSize:15.0f];
+    addInfoPublisher.font = [UIFont fontWithName:@"Roboto-Regular" size:15.0f];
     //addInfoPublisher.backgroundColor = [UIColor redColor];
     [self customizeLabel:addInfoPublisher];
     
@@ -257,60 +272,60 @@
 - (void)initAddInfoDeveloper {
     UILabel *developerTitle = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(addInfoPublisher.frame)+5, 100, 20)];
     developerTitle.text = @"Developer:";
-    developerTitle.font = [UIFont boldSystemFontOfSize:14.0f];
+    developerTitle.font = [UIFont fontWithName:@"Roboto-Medium" size:14.0f];
     [_scrollView addSubview:developerTitle];
     
     addInfoDeveloper = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(developerTitle.frame)+5, CGRectGetMaxY(addInfoPublisher.frame)+5, screenWidth-CGRectGetWidth(developerTitle.frame)-10, 20)];
     addInfoDeveloper.text = _game.developers;
-    addInfoDeveloper.font = [UIFont systemFontOfSize:15.0f];
+    addInfoDeveloper.font = [UIFont fontWithName:@"Roboto-Regular" size:15.0f];
     [self customizeLabel:addInfoDeveloper];    
 }
 
 - (void)initAddInfoAgeRating {
     UILabel *ageRatingTitle = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(addInfoDeveloper.frame)+5, 100, 20)];
     ageRatingTitle.text = @"Age Rating:";
-    ageRatingTitle.font = [UIFont boldSystemFontOfSize:14.0f];
+    ageRatingTitle.font = [UIFont fontWithName:@"Roboto-Medium" size:14.0f];
     [_scrollView addSubview:ageRatingTitle];
     
     addInfoRating = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(ageRatingTitle.frame)+5, CGRectGetMaxY(addInfoDeveloper.frame)+5, screenWidth-CGRectGetWidth(ageRatingTitle.frame)-10, 20)];
     addInfoRating.text = _game.ageRating;
-    addInfoRating.font = [UIFont systemFontOfSize:15.0f];
+    addInfoRating.font = [UIFont fontWithName:@"Roboto-Regular" size:15.0f];
     [self customizeLabel:addInfoRating];
 }
 
 - (void)initAddInfoReleaseDate {
     UILabel *releaseDateTitle = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(addInfoRating.frame)+5, 100, 20)];
     releaseDateTitle.text = @"Release Date:";
-    releaseDateTitle.font = [UIFont boldSystemFontOfSize:14.0f];
+    releaseDateTitle.font = [UIFont fontWithName:@"Roboto-Medium" size:14.0f];
     [_scrollView addSubview:releaseDateTitle];
     
     addInfoReleaseDate = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(releaseDateTitle.frame)+5, CGRectGetMaxY(addInfoRating.frame)+5, screenWidth-CGRectGetWidth(releaseDateTitle.frame)-10, 20)];
     addInfoReleaseDate.text = _game.releaseDate;
-    addInfoReleaseDate.font = [UIFont systemFontOfSize:15.0f];
+    addInfoReleaseDate.font = [UIFont fontWithName:@"Roboto-Regular" size:15.0f];
     [self customizeLabel:addInfoReleaseDate];
 }
 
 - (void)initAddInfoGenres {
     UILabel *genreTitle = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(addInfoReleaseDate.frame)+5, 100, 20)];
     genreTitle.text = @"Genres:";
-    genreTitle.font = [UIFont boldSystemFontOfSize:14.0f];
+    genreTitle.font = [UIFont fontWithName:@"Roboto-Medium" size:14.0f];
     [_scrollView addSubview:genreTitle];
     
     addInfoGenres = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(genreTitle.frame)+5, CGRectGetMaxY(addInfoReleaseDate.frame)+5, screenWidth-CGRectGetWidth(genreTitle.frame)-10, 20)];
     addInfoGenres.text = _game.genres;
-    addInfoGenres.font = [UIFont systemFontOfSize:15.0f];
+    addInfoGenres.font = [UIFont fontWithName:@"Roboto-Regular" size:15.0f];
     [self customizeLabel:addInfoGenres];
 }
 
 - (void)initAddInfoPlatforms {
     UILabel *platformTitle = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(addInfoGenres.frame)+5, 100, 20)];
     platformTitle.text = @"Platforms:";
-    platformTitle.font = [UIFont boldSystemFontOfSize:14.0f];
+    platformTitle.font = [UIFont fontWithName:@"Roboto-Medium" size:14.0f];
     [_scrollView addSubview:platformTitle];
     
     addInfoPlatforms = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(platformTitle.frame)+5, CGRectGetMaxY(addInfoGenres.frame)+5, screenWidth-CGRectGetWidth(platformTitle.frame)-10,20)];
     addInfoPlatforms.text = _game.platforms;
-    addInfoPlatforms.font = [UIFont systemFontOfSize:15.0f];
+    addInfoPlatforms.font = [UIFont fontWithName:@"Roboto-Regular" size:15.0f];
     [self customizeLabel:addInfoPlatforms];
 }
 

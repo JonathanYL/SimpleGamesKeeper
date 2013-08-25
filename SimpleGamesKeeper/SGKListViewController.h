@@ -14,7 +14,10 @@
 @property (nonatomic, strong) SGKNavView *navBar;
 @property (nonatomic, strong) UITableView *_gamesTableView;
 @property (nonatomic, strong) UISearchBar *_searchBar;
+@property (nonatomic, strong) UIActivityIndicatorView *_activityIndicator;
+@property (nonatomic, strong) UIView *_overlayView;
 
+// API
 @property (nonatomic, strong) NSMutableDictionary *_gamesDictionary;
 @property (nonatomic, strong) NSMutableArray *_gamesArray;
 @property (nonatomic) int pageNum;
