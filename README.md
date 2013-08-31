@@ -11,6 +11,8 @@ Here's a list of some key features that I'm proud of:
 
 3. Implementing core data was quite the challenge as it takes some time getting used to. In the end, I was able to learn how to add,remove and fetch results with this app.
 
+4. I think I did a decent job with the overall design and look of the app. I went for the minimalistic approach since it is a style that I like to look at, plus I think it will go well with the theme for iOS7.
+
 Stuff to work on in later versions:
 
 1. As of this moment, there is no filtering among consoles. Hopefully, Giantbomb can update their API to accomodate this. However some solutions that I thought of was modifying the JSON or perhaps when I parse it I can pick and choose what goes into my games array.
