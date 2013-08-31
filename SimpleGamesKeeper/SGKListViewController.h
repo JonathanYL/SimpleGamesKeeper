@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SGKNavView.h"
 
-@interface SGKListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface SGKListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, SGKNavViewDelegate>
 
 @property (nonatomic, strong) SGKNavView *navBar;
 @property (nonatomic, strong) UITableView *_gamesTableView;

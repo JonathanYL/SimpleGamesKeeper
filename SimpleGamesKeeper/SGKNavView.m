@@ -26,6 +26,7 @@
         [self initSystemLabel:index];
         [self initBackButton];
         [self initBorderLine];
+        [self._backButton addTarget:self action:@selector(didPressBackButton:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -95,5 +96,11 @@
     UIView *border = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.frame), CGRectGetWidth(self.frame), 1)];
     border.backgroundColor = [UIColor darkGrayColor];
     [self addSubview:border];
+}
+
+#pragma mark - delegate
+- (void)didPressBackButton:(UIButton *)sender
+{
+    [self.delegate backButtonPressed];
 }
 @end

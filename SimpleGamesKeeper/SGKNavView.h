@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SGKNavViewDelegate <NSObject>
+- (void)backButtonPressed;
+@end
+
 @interface SGKNavView : UIView
 
 @property (nonatomic, strong) UIButton *_backButton;
 @property (nonatomic, strong) UILabel *_systemName;
+@property (nonatomic, strong) id <SGKNavViewDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame andIndex:(int)index;
 

@@ -39,7 +39,6 @@
     [self initCoreDatabase];
     [self initNavBar:index];
     [self initGamesTableView];
-    [_navBar._backButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view bringSubviewToFront:_navBar];
 }
 
@@ -64,6 +63,7 @@
 #pragma mark - custom init
 - (void)initNavBar:(int)carouselIndex{
     _navBar = [[SGKNavView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40) andIndex:carouselIndex];
+    _navBar.delegate = self;
     [self.view addSubview:_navBar];
 }
 
@@ -118,10 +118,10 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
-#pragma mark - press events
-- (void)didPressButton:(UIButton *)sender
-{
+#pragma mark - SGKNavViewDelegate
+- (void)backButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end

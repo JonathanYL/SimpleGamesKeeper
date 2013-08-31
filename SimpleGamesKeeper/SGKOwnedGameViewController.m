@@ -59,8 +59,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self initNavBar:index];
     [self initLoading];
-    // Needs to be changed to delegate function
-    [_navBar._backButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view bringSubviewToFront:_navBar];
     
     [self initScrollView];
@@ -93,6 +91,7 @@
 #pragma mark - custom init
 - (void)initNavBar:(int)carouselIndex{
     _navBar = [[SGKNavView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 40) andIndex:carouselIndex];
+    _navBar.delegate = self;
     [self.view addSubview:_navBar];
 }
 
@@ -334,7 +333,9 @@
     [context save:nil];
 }
 
-- (void)didPressButton:(UIButton *)sender {
+#pragma mark - SGKNavViewDelegate
+- (void)backButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 @end

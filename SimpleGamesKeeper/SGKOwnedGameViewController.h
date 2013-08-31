@@ -10,7 +10,7 @@
 #import "SGKNavView.h"
 #import "Game.h"
 
-@interface SGKOwnedGameViewController : UIViewController
+@interface SGKOwnedGameViewController : UIViewController <SGKNavViewDelegate>
 
 @property (nonatomic, strong) SGKNavView *navBar;
 @property (nonatomic, strong) Game* _myGame;

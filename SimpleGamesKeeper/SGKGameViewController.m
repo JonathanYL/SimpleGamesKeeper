@@ -63,10 +63,6 @@
     [self initNavBar:index];
     [self initLoading];
     [self callAPI];
-    // [self performSelectorOnMainThread:@selector(callAPI) withObject:nil waitUntilDone:YES];
-
-    // Needs to be changed to delegate function
-    [_navBar._backButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view bringSubviewToFront:_navBar];
 }
 
@@ -79,6 +75,7 @@
 #pragma mark - custom init
 - (void)initNavBar:(int)carouselIndex{
     _navBar = [[SGKNavView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 40) andIndex:carouselIndex];
+    _navBar.delegate = self;
     [self.view addSubview:_navBar];
 }
 
@@ -352,9 +349,8 @@
     [_scrollView addSubview:label];
 }
 
-#pragma mark - press events
-- (void)didPressButton:(UIButton *)sender
-{
+#pragma mark - SGKNavViewDelegate
+- (void)backButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];
 }
 

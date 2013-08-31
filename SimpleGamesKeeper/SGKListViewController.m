@@ -47,9 +47,6 @@
     [self initSearchBar];
     [self initGamesTableView];
     
-    // Needs to be changed to delegate function
-    [_navBar._backButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
-    
     pageNum = 1;
     fetchBatch = 0;
     loading = NO;
@@ -74,6 +71,7 @@
 #pragma mark - custom init
 - (void)initNavBar:(int)carouselIndex{
     _navBar = [[SGKNavView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40) andIndex:carouselIndex];
+    _navBar.delegate = self;
     [self.view addSubview:_navBar];
 }
 
@@ -106,9 +104,8 @@
     [_gamesTableView addSubview:_overlayView];
 }
 
-#pragma mark - other
-- (void)didPressButton:(UIButton *)sender
-{
+#pragma mark - SGKNavViewDelegate
+- (void)backButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
