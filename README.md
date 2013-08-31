@@ -19,5 +19,9 @@ Stuff to work on in later versions:
 
 3. I would like to add more functionality when a user is viewing a specific game. Perhaps embedding a video or adding a similar games section would improve the experience.
 
+4. Needs to be refactored a bit. There are some duplicate code, some places that are kind of hacky and hard-coded values that I would like to change.
+
+5. Right now this is only tested with the iPhone simulator. I cannot guarantee that it will be fine for retina devices. I would like to change that in the future.
+
 Special Thanks:
-iCarousel, ReflectionView, my co-workers at Xtreme Labs (It was awesome to work with you guys this summer).
+Giantbomb, iCarousel, ReflectionView, my co-workers at Xtreme Labs (It was awesome to work with you guys this summer).
