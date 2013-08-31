@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AB03919A17B334BA003708A3 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03919917B334BA003708A3 /* DataLoader.m */; };
-		AB0E661C17AB4BF50059BD9F /* GiantBombAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */; };
 		AB103F7817CECF160041E3D5 /* SGKGameCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB103F7717CECF160041E3D5 /* SGKGameCollectionViewController.m */; };
 		AB12C19517CA5D2A00BC4AE7 /* logoCollection.png in Resources */ = {isa = PBXBuildFile; fileRef = AB12C19417CA5D2A00BC4AE7 /* logoCollection.png */; };
 		AB19A0D517C96DF1007CAFDA /* logoEvery.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0CF17C96DF1007CAFDA /* logoEvery.png */; };
@@ -63,8 +62,6 @@
 /* Begin PBXFileReference section */
 		AB03919817B334BA003708A3 /* DataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoader.h; sourceTree = "<group>"; };
 		AB03919917B334BA003708A3 /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
-		AB0E661A17AB4BF50059BD9F /* GiantBombAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GiantBombAPI.h; path = ../GiantBombAPI.h; sourceTree = "<group>"; };
-		AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GiantBombAPI.m; path = ../GiantBombAPI.m; sourceTree = "<group>"; };
 		AB103F7617CECF160041E3D5 /* SGKGameCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKGameCollectionViewController.h; sourceTree = "<group>"; };
 		AB103F7717CECF160041E3D5 /* SGKGameCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKGameCollectionViewController.m; sourceTree = "<group>"; };
 		AB12C19417CA5D2A00BC4AE7 /* logoCollection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoCollection.png; path = Images/logoCollection.png; sourceTree = "<group>"; };
@@ -156,8 +153,6 @@
 				AB51068517CC2E040062E97F /* Game.m */,
 				ABE258CE17B864ED00A184B2 /* GameModel.h */,
 				ABE258CF17B864ED00A184B2 /* GameModel.m */,
-				AB0E661A17AB4BF50059BD9F /* GiantBombAPI.h */,
-				AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */,
 				AB03919817B334BA003708A3 /* DataLoader.h */,
 				AB03919917B334BA003708A3 /* DataLoader.m */,
 			);
@@ -401,7 +396,6 @@
 				ABF0C35017A4481B0042E9A2 /* iCarousel.m in Sources */,
 				ABECC41917A4C0F40089EED6 /* SGKListViewController.m in Sources */,
 				ABECC41D17A4C1520089EED6 /* SGKNavView.m in Sources */,
-				AB0E661C17AB4BF50059BD9F /* GiantBombAPI.m in Sources */,
 				AB4AF7EC17B0565B0067A390 /* SGKTableViewCell.m in Sources */,
 				AB03919A17B334BA003708A3 /* DataLoader.m in Sources */,
 				ABE258CA17B824C800A184B2 /* SGKGameViewController.m in Sources */,

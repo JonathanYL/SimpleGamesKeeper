@@ -21,8 +21,9 @@
             self.deck = [results objectForKey:@"deck"];
         }
         
-        
-        self.imageURL = [NSURL URLWithString:[[results objectForKey:@"image"] objectForKey:@"thumb_url"]];
+        if ([results objectForKey:@"image"] != [NSNull null]) {
+            self.imageURL = [NSURL URLWithString:[[results objectForKey:@"image"] objectForKey:@"thumb_url"]];
+        }
         
         self.genres = @"";
         if ([results objectForKey:@"genres"] != [NSNull null]) {
