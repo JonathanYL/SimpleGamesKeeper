@@ -13,6 +13,7 @@
 #define NintendoColor [UIColor colorWithRed:236.0f/255.0f green:79.0f/255.0f blue:76.0f/255.0f alpha:1.0f]
 #define EverythingColor [UIColor colorWithRed:255.0f/255.0f green:167.0f/255.0f blue:77.0f/255.0f alpha:1.0f]
 #define PCColor [UIColor colorWithRed:213.0f/255.0f green:134.0f/255.0f blue:221.0f/255.0f alpha:1.0f]
+#define CollectionColor [UIColor colorWithRed:122.0f/255.0f green:206.0f/255.0f blue:206.0f/255.0f alpha:1.0f]
 
 @implementation SGKNavView
 @synthesize _systemName;
@@ -78,6 +79,10 @@
         case 4:
             self.backgroundColor = EverythingColor;
             self._systemName.text = @"Everything!";
+            break;
+        case 5:
+            self.backgroundColor = CollectionColor;
+            self._systemName.text = @"Games Collection";
             break;
         default:
             self.backgroundColor = [UIColor grayColor];

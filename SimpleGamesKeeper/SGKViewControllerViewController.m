@@ -9,6 +9,8 @@
 #import "SGKViewControllerViewController.h"
 #import "iCarousel.h"
 #import "SGKTileReflectionView.h"
+#import "SGKViewControllerAppDelegate.h"
+#import "SGKGameCollectionViewController.h"
 
 @interface SGKViewControllerViewController () <iCarouselDataSource, iCarouselDelegate>
 
@@ -97,6 +99,22 @@
     label.textAlignment = NSTextAlignmentCenter;
 	[self.view addSubview:carousel];
     [self.view addSubview:label];
+    //[self printCoreData];
+}
+
+// FOR TESTING
+- (void)printCoreData {
+    SGKViewControllerAppDelegate *app = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = app.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Game" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *info in fetchedObjects) {
+        NSLog(@"Core Data Name: %@", [info valueForKey:@"name"]);
+    }
 }
 
 - (void)initTitle {
@@ -179,8 +197,14 @@
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
     NSLog(@"Clicked:%d", index);
-    SGKListViewController *viewController = [[SGKListViewController alloc] initWithIndex:index];
-    [self.navigationController pushViewController:viewController animated:YES];
+    
+    if (index == 5) {
+        SGKGameCollectionViewController *viewController = [[SGKGameCollectionViewController alloc] initWithIndex:index];
+        [self.navigationController pushViewController:viewController animated:YES];
+    } else {    
+        SGKListViewController *viewController = [[SGKListViewController alloc] initWithIndex:index];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
 - (CATransform3D)carousel:(iCarousel *)_carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform

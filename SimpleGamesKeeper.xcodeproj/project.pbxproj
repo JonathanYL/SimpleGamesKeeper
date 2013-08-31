@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB03919A17B334BA003708A3 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03919917B334BA003708A3 /* DataLoader.m */; };
 		AB0E661C17AB4BF50059BD9F /* GiantBombAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */; };
+		AB103F7817CECF160041E3D5 /* SGKGameCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB103F7717CECF160041E3D5 /* SGKGameCollectionViewController.m */; };
 		AB12C19517CA5D2A00BC4AE7 /* logoCollection.png in Resources */ = {isa = PBXBuildFile; fileRef = AB12C19417CA5D2A00BC4AE7 /* logoCollection.png */; };
 		AB19A0D517C96DF1007CAFDA /* logoEvery.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0CF17C96DF1007CAFDA /* logoEvery.png */; };
 		AB19A0D617C96DF1007CAFDA /* logoNintendo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D017C96DF1007CAFDA /* logoNintendo.png */; };
@@ -27,7 +28,11 @@
 		AB19A0FF17C9A7CB007CAFDA /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F617C9A7CB007CAFDA /* RobotoCondensed-Bold.ttf */; };
 		AB19A10017C9A7CB007CAFDA /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F717C9A7CB007CAFDA /* RobotoCondensed-Light.ttf */; };
 		AB19A10117C9A7CB007CAFDA /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F817C9A7CB007CAFDA /* RobotoCondensed-Regular.ttf */; };
+		AB406D1017D167DF009741E0 /* SGKOwnedGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB406D0F17D167DF009741E0 /* SGKOwnedGameViewController.m */; };
 		AB4AF7EC17B0565B0067A390 /* SGKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */; };
+		AB51068317CC2BFB0062E97F /* GameCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB51068117CC2BFB0062E97F /* GameCollection.xcdatamodeld */; };
+		AB51068617CC2E040062E97F /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = AB51068517CC2E040062E97F /* Game.m */; };
+		AB51068817CC31610062E97F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB51068717CC31610062E97F /* CoreData.framework */; };
 		ABE258CA17B824C800A184B2 /* SGKGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258C917B824C800A184B2 /* SGKGameViewController.m */; };
 		ABE258CD17B8648C00A184B2 /* SGKGameScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258CC17B8648C00A184B2 /* SGKGameScrollView.m */; };
 		ABE258D017B864ED00A184B2 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE258CF17B864ED00A184B2 /* GameModel.m */; };
@@ -60,6 +65,8 @@
 		AB03919917B334BA003708A3 /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
 		AB0E661A17AB4BF50059BD9F /* GiantBombAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GiantBombAPI.h; path = ../GiantBombAPI.h; sourceTree = "<group>"; };
 		AB0E661B17AB4BF50059BD9F /* GiantBombAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GiantBombAPI.m; path = ../GiantBombAPI.m; sourceTree = "<group>"; };
+		AB103F7617CECF160041E3D5 /* SGKGameCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKGameCollectionViewController.h; sourceTree = "<group>"; };
+		AB103F7717CECF160041E3D5 /* SGKGameCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKGameCollectionViewController.m; sourceTree = "<group>"; };
 		AB12C19417CA5D2A00BC4AE7 /* logoCollection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoCollection.png; path = Images/logoCollection.png; sourceTree = "<group>"; };
 		AB19A0CF17C96DF1007CAFDA /* logoEvery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoEvery.png; path = Images/logoEvery.png; sourceTree = "<group>"; };
 		AB19A0D017C96DF1007CAFDA /* logoNintendo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoNintendo.png; path = Images/logoNintendo.png; sourceTree = "<group>"; };
@@ -80,8 +87,14 @@
 		AB19A0F617C9A7CB007CAFDA /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		AB19A0F717C9A7CB007CAFDA /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		AB19A0F817C9A7CB007CAFDA /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		AB406D0E17D167DF009741E0 /* SGKOwnedGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKOwnedGameViewController.h; sourceTree = "<group>"; };
+		AB406D0F17D167DF009741E0 /* SGKOwnedGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKOwnedGameViewController.m; sourceTree = "<group>"; };
 		AB4AF7EA17B0565B0067A390 /* SGKTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTableViewCell.h; sourceTree = "<group>"; };
 		AB4AF7EB17B0565B0067A390 /* SGKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTableViewCell.m; sourceTree = "<group>"; };
+		AB51068217CC2BFB0062E97F /* GameCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameCollection.xcdatamodel; sourceTree = "<group>"; };
+		AB51068417CC2E040062E97F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		AB51068517CC2E040062E97F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		AB51068717CC31610062E97F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		ABE258C817B824C800A184B2 /* SGKGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKGameViewController.h; sourceTree = "<group>"; };
 		ABE258C917B824C800A184B2 /* SGKGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKGameViewController.m; sourceTree = "<group>"; };
 		ABE258CB17B8648C00A184B2 /* SGKGameScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKGameScrollView.h; sourceTree = "<group>"; };
@@ -125,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB51068817CC31610062E97F /* CoreData.framework in Frameworks */,
 				ABF0C34B17A445BE0042E9A2 /* QuartzCore.framework in Frameworks */,
 				ABF0C32817A444F00042E9A2 /* UIKit.framework in Frameworks */,
 				ABF0C32A17A444F00042E9A2 /* Foundation.framework in Frameworks */,
@@ -138,6 +152,8 @@
 		AB0E661D17AB4BFE0059BD9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AB51068417CC2E040062E97F /* Game.h */,
+				AB51068517CC2E040062E97F /* Game.m */,
 				ABE258CE17B864ED00A184B2 /* GameModel.h */,
 				ABE258CF17B864ED00A184B2 /* GameModel.m */,
 				AB0E661A17AB4BF50059BD9F /* GiantBombAPI.h */,
@@ -208,6 +224,7 @@
 		ABF0C32617A444F00042E9A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB51068717CC31610062E97F /* CoreData.framework */,
 				ABF0C34A17A445BE0042E9A2 /* QuartzCore.framework */,
 				ABF0C32717A444F00042E9A2 /* UIKit.framework */,
 				ABF0C32917A444F00042E9A2 /* Foundation.framework */,
@@ -227,6 +244,10 @@
 				ABECC41817A4C0F40089EED6 /* SGKListViewController.m */,
 				ABE258C817B824C800A184B2 /* SGKGameViewController.h */,
 				ABE258C917B824C800A184B2 /* SGKGameViewController.m */,
+				AB103F7617CECF160041E3D5 /* SGKGameCollectionViewController.h */,
+				AB103F7717CECF160041E3D5 /* SGKGameCollectionViewController.m */,
+				AB406D0E17D167DF009741E0 /* SGKOwnedGameViewController.h */,
+				AB406D0F17D167DF009741E0 /* SGKOwnedGameViewController.m */,
 				ABF0C32E17A444F00042E9A2 /* Supporting Files */,
 			);
 			path = SimpleGamesKeeper;
@@ -249,6 +270,7 @@
 				ABF0C33917A444F00042E9A2 /* Default.png */,
 				ABF0C33B17A444F00042E9A2 /* Default@2x.png */,
 				ABF0C33D17A444F00042E9A2 /* Default-568h@2x.png */,
+				AB51068117CC2BFB0062E97F /* GameCollection.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -387,6 +409,10 @@
 				ABE258D017B864ED00A184B2 /* GameModel.m in Sources */,
 				AB19A0DD17C9747C007CAFDA /* ReflectionView.m in Sources */,
 				AB19A0E317C976DB007CAFDA /* SGKTileReflectionView.m in Sources */,
+				AB51068317CC2BFB0062E97F /* GameCollection.xcdatamodeld in Sources */,
+				AB51068617CC2E040062E97F /* Game.m in Sources */,
+				AB103F7817CECF160041E3D5 /* SGKGameCollectionViewController.m in Sources */,
+				AB406D1017D167DF009741E0 /* SGKOwnedGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +538,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AB51068117CC2BFB0062E97F /* GameCollection.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AB51068217CC2BFB0062E97F /* GameCollection.xcdatamodel */,
+			);
+			currentVersion = AB51068217CC2BFB0062E97F /* GameCollection.xcdatamodel */;
+			path = GameCollection.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ABF0C31C17A444F00042E9A2 /* Project object */;
 }

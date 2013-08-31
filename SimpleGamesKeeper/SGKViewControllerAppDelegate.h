@@ -13,7 +13,15 @@
 @interface SGKViewControllerAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) SGKViewControllerViewController *viewController;
 @property (nonatomic, strong) UINavigationController *navigationController;
+
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (NSString *)applicationDocumentsDirectory;
+
 @end

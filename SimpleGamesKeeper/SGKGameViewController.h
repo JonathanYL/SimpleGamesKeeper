@@ -16,7 +16,6 @@
 @property (nonatomic, strong) NSDictionary *_gameResult;
 @property (nonatomic, strong) UIScrollView *_scrollView;
 @property (nonatomic, strong) GameModel *_game;
-@property (nonatomic, strong) UIButton *_addGameButton;
 @property (nonatomic, strong) UIView *_overlayView;
 @property (nonatomic, strong) UIActivityIndicatorView *_activityIndicator;
 
