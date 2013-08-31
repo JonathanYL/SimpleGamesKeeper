@@ -5,7 +5,7 @@ Hi there! Welcome to my simple games collection - Simple Games Keeper. This proj
 
 Here's a list of some key features that I'm proud of:
 
-1. When a user queries a popular term (such as "Mario"), I ensure that the tablerow results are lazy loaded as the user navigates down the table. I do this by quering an extra 25 results when the user is 2/3rds down the page. As a result, there is an almost seamless transition when querying large results.
+1. When a user queries a popular term (such as "Mario"), I ensure that the tablerow results are lazy loaded as the user navigates down the table. I do this by querying an extra 25 results when the user is 2/3rds down the page. As a result, there is an almost seamless transition when querying large results.
 
 2. I thought that the carousel for the home screen turned out really well. By adding a small reflection with custom assets I created, I feel that it looked really good against a simple, minimalistic white backdrop. 
 
