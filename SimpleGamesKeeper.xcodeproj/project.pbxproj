@@ -15,7 +15,6 @@
 		AB19A0D717C96DF1007CAFDA /* logoPC.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D117C96DF1007CAFDA /* logoPC.png */; };
 		AB19A0D817C96DF1007CAFDA /* logoPS.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D217C96DF1007CAFDA /* logoPS.png */; };
 		AB19A0D917C96DF1007CAFDA /* logoXBOX.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D317C96DF1007CAFDA /* logoXBOX.png */; };
-		AB19A0DA17C96DF1007CAFDA /* newBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0D417C96DF1007CAFDA /* newBackground.png */; };
 		AB19A0DD17C9747C007CAFDA /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19A0DC17C9747C007CAFDA /* ReflectionView.m */; };
 		AB19A0E317C976DB007CAFDA /* SGKTileReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19A0E217C976DB007CAFDA /* SGKTileReflectionView.m */; };
 		AB19A0F917C9A7CB007CAFDA /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB19A0F017C9A7CB007CAFDA /* Roboto-Black.ttf */; };
@@ -50,13 +49,7 @@
 		ABF0C34417A444F00042E9A2 /* SGKViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF0C34217A444F00042E9A2 /* SGKViewControllerViewController.xib */; };
 		ABF0C34B17A445BE0042E9A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF0C34A17A445BE0042E9A2 /* QuartzCore.framework */; };
 		ABF0C35017A4481B0042E9A2 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF0C34F17A4481B0042E9A2 /* iCarousel.m */; };
-		ABF0C35517A44C8D0042E9A2 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0C35317A44C8D0042E9A2 /* background.png */; };
 		ABF0C35617A44C8D0042E9A2 /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0C35417A44C8D0042E9A2 /* page.png */; };
-		ABF0C35C17A450E50042E9A2 /* misc.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0C35717A450E50042E9A2 /* misc.png */; };
-		ABF0C35D17A450E50042E9A2 /* nintendo.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0C35817A450E50042E9A2 /* nintendo.png */; };
-		ABF0C35E17A450E50042E9A2 /* PC.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0C35917A450E50042E9A2 /* PC.png */; };
-		ABF0C35F17A450E50042E9A2 /* playstation.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0C35A17A450E50042E9A2 /* playstation.png */; };
-		ABF0C36017A450E50042E9A2 /* xbox.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0C35B17A450E50042E9A2 /* xbox.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +63,6 @@
 		AB19A0D117C96DF1007CAFDA /* logoPC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoPC.png; path = Images/logoPC.png; sourceTree = "<group>"; };
 		AB19A0D217C96DF1007CAFDA /* logoPS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoPS.png; path = Images/logoPS.png; sourceTree = "<group>"; };
 		AB19A0D317C96DF1007CAFDA /* logoXBOX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoXBOX.png; path = Images/logoXBOX.png; sourceTree = "<group>"; };
-		AB19A0D417C96DF1007CAFDA /* newBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newBackground.png; path = Images/newBackground.png; sourceTree = "<group>"; };
 		AB19A0DB17C9747C007CAFDA /* ReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionView.h; sourceTree = "<group>"; };
 		AB19A0DC17C9747C007CAFDA /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
 		AB19A0E117C976DB007CAFDA /* SGKTileReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTileReflectionView.h; sourceTree = "<group>"; };
@@ -121,13 +113,7 @@
 		ABF0C34A17A445BE0042E9A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ABF0C34E17A4481B0042E9A2 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = iCarousel/iCarousel.h; sourceTree = "<group>"; };
 		ABF0C34F17A4481B0042E9A2 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = iCarousel/iCarousel.m; sourceTree = "<group>"; };
-		ABF0C35317A44C8D0042E9A2 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Images/background.png; sourceTree = "<group>"; };
 		ABF0C35417A44C8D0042E9A2 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page.png; path = Images/page.png; sourceTree = "<group>"; };
-		ABF0C35717A450E50042E9A2 /* misc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = misc.png; path = Images/misc.png; sourceTree = "<group>"; };
-		ABF0C35817A450E50042E9A2 /* nintendo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nintendo.png; path = Images/nintendo.png; sourceTree = "<group>"; };
-		ABF0C35917A450E50042E9A2 /* PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PC.png; path = Images/PC.png; sourceTree = "<group>"; };
-		ABF0C35A17A450E50042E9A2 /* playstation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playstation.png; path = Images/playstation.png; sourceTree = "<group>"; };
-		ABF0C35B17A450E50042E9A2 /* xbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = xbox.png; path = Images/xbox.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,13 +274,6 @@
 				AB19A0D117C96DF1007CAFDA /* logoPC.png */,
 				AB19A0D217C96DF1007CAFDA /* logoPS.png */,
 				AB19A0D317C96DF1007CAFDA /* logoXBOX.png */,
-				AB19A0D417C96DF1007CAFDA /* newBackground.png */,
-				ABF0C35717A450E50042E9A2 /* misc.png */,
-				ABF0C35817A450E50042E9A2 /* nintendo.png */,
-				ABF0C35917A450E50042E9A2 /* PC.png */,
-				ABF0C35A17A450E50042E9A2 /* playstation.png */,
-				ABF0C35B17A450E50042E9A2 /* xbox.png */,
-				ABF0C35317A44C8D0042E9A2 /* background.png */,
 				ABF0C35417A44C8D0042E9A2 /* page.png */,
 			);
 			name = Images;
@@ -357,19 +336,12 @@
 				ABF0C33C17A444F00042E9A2 /* Default@2x.png in Resources */,
 				ABF0C33E17A444F00042E9A2 /* Default-568h@2x.png in Resources */,
 				ABF0C34417A444F00042E9A2 /* SGKViewControllerViewController.xib in Resources */,
-				ABF0C35517A44C8D0042E9A2 /* background.png in Resources */,
 				ABF0C35617A44C8D0042E9A2 /* page.png in Resources */,
-				ABF0C35C17A450E50042E9A2 /* misc.png in Resources */,
-				ABF0C35D17A450E50042E9A2 /* nintendo.png in Resources */,
-				ABF0C35E17A450E50042E9A2 /* PC.png in Resources */,
-				ABF0C35F17A450E50042E9A2 /* playstation.png in Resources */,
-				ABF0C36017A450E50042E9A2 /* xbox.png in Resources */,
 				AB19A0D517C96DF1007CAFDA /* logoEvery.png in Resources */,
 				AB19A0D617C96DF1007CAFDA /* logoNintendo.png in Resources */,
 				AB19A0D717C96DF1007CAFDA /* logoPC.png in Resources */,
 				AB19A0D817C96DF1007CAFDA /* logoPS.png in Resources */,
 				AB19A0D917C96DF1007CAFDA /* logoXBOX.png in Resources */,
-				AB19A0DA17C96DF1007CAFDA /* newBackground.png in Resources */,
 				AB19A0F917C9A7CB007CAFDA /* Roboto-Black.ttf in Resources */,
 				AB19A0FA17C9A7CB007CAFDA /* Roboto-Bold.ttf in Resources */,
 				AB19A0FB17C9A7CB007CAFDA /* Roboto-Light.ttf in Resources */,
